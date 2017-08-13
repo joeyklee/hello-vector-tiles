@@ -119,6 +119,7 @@ Please sign in here & feel free to document, ask questions, or make comments on 
 
 ![](assets/images/slides-part0.png)
 
+* A few slides to give you an [overview of the workshop](/slides/index.html)
 * I'm [joey](jk-lee.com), your workshop host.
 * Say hello to eachother! 
 
