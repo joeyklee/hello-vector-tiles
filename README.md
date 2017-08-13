@@ -112,6 +112,7 @@ Please sign in here & feel free to document, ask questions, or make comments on 
 
 
 <br>
+
 ### Introduction to the data
 
 ![image of hubway counts between stops](assets/images/hubway-counts-routed.png)
@@ -143,6 +144,7 @@ I used a `group-by` function to group the data in a python script which you can 
 
 
 <br>
+
 ### Sketching with 🚴 data 
 
 
@@ -184,6 +186,7 @@ For the purpose of this workshop, we will use this routed dataset to produce our
 ![](assets/images/slides-part2.png)
 
 <br>
+
 ### What's a Tippecanoe?
 
 
@@ -193,6 +196,7 @@ There are a number of ways to achieve this, but the way we're going to do it tod
 
 
 <br>
+
 ### Installation
 
 
@@ -200,6 +204,7 @@ If you haven't installed [Tippecanoe](https://github.com/mapbox/tippecanoe), we 
 
 
 <br>
+
 ### Converting our routed bike trips
 
 
@@ -233,6 +238,7 @@ In this workshop we aren't going to convert the stations to vector .mbtiles for 
 
 
 <br>
+
 ### A note on handling points
 
 
@@ -272,6 +278,7 @@ For this workshop, I'm going to introduce you to [Tilehut.js](https://github.com
 
 
 <br>
+
 ### Install Tilehut
 
 
@@ -301,6 +308,7 @@ For now, let's explore Tilehut.js a bit.
 
 
 <br>
+
 ### Poke around and inspect
 
 
@@ -333,6 +341,7 @@ That leaves us with:
 
 
 <br>
+
 ### Breaking down the vector tile example
 
 
@@ -368,6 +377,7 @@ You'll notice:
 Lets break down `sources` and `layers` as these are important for the rest of our work:
 
 <br>
+
 #### Sources
 
 ![](assets/images/tilehut-stylejson-sources.png)
@@ -411,6 +421,7 @@ Now you can imagine if you placed a `.mbtiles` file called, `hubway-routed.mbtil
 
 
 <br>
+
 #### Layers
 
 
@@ -558,6 +569,7 @@ In the next sections we are going to:
 
 
 <br>
+
 ### Serve up your bike trips tiles
 
 
@@ -646,6 +658,7 @@ Here in part 4, we're going to simultaneously learn about:
 
 
 <br>
+
 ### Examples/01-trips
 
 
@@ -670,6 +683,7 @@ If you open up the `index.html` and the `style.json` files in your text editor, 
 
 
 <br>
+
 ### Examples/02-trips-refactored
 
 
@@ -708,6 +722,7 @@ This pattern `map.addSource()... map.addLayer()` is something that you might enc
 ![](assets/images/tilehut-basemap-with-trips.png)
 
 <br>
+
 #### layer style check
 
 Before we continue, let's just have a look at the layer definition for the `hubway-routed-halo` layer. 
@@ -759,6 +774,7 @@ Here we can see some new changes to our style:
 
 
 <br>
+
 ### Examples/03-trips-and-stations
 
 
@@ -834,6 +850,7 @@ Now we're ready to get our tiles online. In this section we will (assuming the w
 
 
 <br>
+
 ### Get your git on
 
 
@@ -862,6 +879,7 @@ git commit -m "initial commit"
 
 
 <br>
+
 ### Setup <strike>Openshift</strike>Heroku & deploy
 
 
@@ -948,6 +966,7 @@ If that works, we should have our tiles available at the address, something like
 
 
 <br>
+
 ### Change links within local projects
 
 Now that our data is being served from our deployed Tilehut server, all we need to do is replace the local tile URL with the  our remotely served tiles URL. Give that a try!
@@ -976,6 +995,7 @@ map.addSource('tilehut-hubway-routes', {
 ```
 
 <br>
+
 ### Add style changes
 
 
@@ -991,6 +1011,7 @@ This whole time we've been working off the styles I've defined for the data, but
 
 
 <br>
+
 ### Deploy using Github pages
 
 
@@ -1024,6 +1045,7 @@ This whole time we've been working off the styles I've defined for the data, but
 🌈🦄🌈🦄🌈🦄🌈🦄🌈🦄🌈🦄🌈🦄🌈🦄🌈🦄🌈🦄🌈🦄🌈🦄🌈🦄🌈🦄
 
 <br>
+
 ### Next steps
 
 <center>![make all the things](http://s.quickmeme.com/img/e7/e7ec8aa0f8bbe5d1af19ccf3c819967f649b43a974e18bfbe10bc412f3da9090.jpg) </center>
