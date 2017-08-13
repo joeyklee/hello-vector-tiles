@@ -9,7 +9,14 @@ Half day (4 hours)
 
 The workshop is aimed to be as inclusive as possible and therefore we develop our materials with beginners in mind. However, we acknowledge the existence of handful of technologies that may be unfamiliar to those who are just getting started in web development/programming (e.g. Node.js, javascript, and the command line). That being said, we are happy if participants have a basic level computational literacy and have some exposure to mapping tools such as Tilemill, Mapbox Studio, or Maputnik, and web mapping libraries such as leaflet.js and Mapboxgl.js. 
 
-<!-- ********** REQUIREMENTS ********** -->
+
+<!-- ***
+***
+***
+* REQUIREMENTS ***
+***
+***
+* -->
 
 ## Requirements: 
 
@@ -27,7 +34,14 @@ The workshop is aimed to be as inclusive as possible and therefore we develop ou
 
 
 
-<!-- ********** OUTLINE & ITINERARY ********** -->
+
+<!-- ***
+***
+***
+* OUTLINE & ITINERARY ***
+***
+***
+* -->
 
 
 <!-- ## Outline & Itinerary: -->
@@ -51,7 +65,14 @@ The workshop is aimed to be as inclusive as possible and therefore we develop ou
  -->
 
 
-<!-- ********** COLLABORATION PAD ********** -->
+
+<!-- ***
+***
+***
+* COLLABORATION PAD ***
+***
+***
+* -->
 
 
 ## Collaboration Pad
@@ -64,18 +85,34 @@ Please sign in here & feel free to document, ask questions, or make comments on 
 
 <br>
 <br>
+
 ***
+
 <br>
 <br>
 
 
-<!-- ********** WORKSHOP START ********** -->
+
+<!-- ***
+***
+***
+* WORKSHOP START ***
+***
+***
+* -->
 
 
 # 3...2...1 Let's go!  
 
 
-<!-- ********** INTRODUCTION ********** -->
+
+<!-- ***
+***
+***
+* INTRODUCTION ***
+***
+***
+* -->
 
 
 ## Introduction
@@ -97,11 +134,20 @@ Please sign in here & feel free to document, ask questions, or make comments on 
 
 <br>
 <br>
+
 ***
+
 <br>
 <br>
 
-<!-- ********** Part 1 ********** -->
+
+<!-- ***
+***
+***
+* Part 1 ***
+***
+***
+* -->
 
 
 
@@ -172,12 +218,21 @@ For the purpose of this workshop, we will use this routed dataset to produce our
 
 <br>
 <br>
+
 ***
+
 <br>
 <br>
 
 
-<!-- ********** Part 2 ********** -->
+
+<!-- ***
+***
+***
+* Part 2 ***
+***
+***
+* -->
 
 
 
@@ -254,11 +309,20 @@ On the flip side, if you want to handle a bunch of points and you need some fanc
 
 <br>
 <br>
+
 ***
+
 <br>
 <br>
 
-<!-- ********** Part 3 ********** -->
+
+<!-- ***
+***
+***
+* Part 3 ***
+***
+***
+* -->
 
 
 
@@ -526,11 +590,20 @@ We have:
 
 <br>
 <br>
+
 ***
+
 <br>
 <br>
 
-<!-- ********** BREAK ********** -->
+
+<!-- ***
+***
+***
+* BREAK ***
+***
+***
+* -->
 🎉❤️⚡️✨🦄🌈🎉❤️⚡️✨🦄🌈🎉❤️⚡️✨🦄🌈🎉❤️⚡️✨🦄🌈🎉❤️⚡️✨🦄🌈
 
 
@@ -551,11 +624,20 @@ Go all around to avoid the NSA (hands on hips, lean all around)
 
 <br>
 <br>
+
 ***
+
 <br>
 <br>
 
-<!-- ********** Part 3.5 ********** -->
+
+<!-- ***
+***
+***
+* Part 3.5 ***
+***
+***
+* -->
 
 
 ## Part 3.5
@@ -639,11 +721,20 @@ If this isn't what you see, then check to make sure your tileserver is running a
 
 <br>
 <br>
+
 ***
+
 <br>
 <br>
 
-<!-- ********** Part 4 ********** -->
+
+<!-- ***
+***
+***
+* Part 4 ***
+***
+***
+* -->
 
 
 
@@ -828,11 +919,20 @@ map.addLayer(hubwayLabelStyle);
 
 <br>
 <br>
+
 ***
+
 <br>
 <br>
 
-<!-- ********** PART 5 ********** -->
+
+<!-- ***
+***
+***
+* PART 5 ***
+***
+***
+* -->
 
 
 
@@ -1026,13 +1126,22 @@ This whole time we've been working off the styles I've defined for the data, but
 
 <br>
 <br>
+
 ***
+
 <br>
 <br>
 
 
 
-<!-- ********** CONCLUDING REMARKS AND WORKING TIME ********** -->
+
+<!-- ***
+***
+***
+* CONCLUDING REMARKS AND WORKING TIME ***
+***
+***
+* -->
 
 
 
@@ -1073,7 +1182,9 @@ The next hour or so will be dedicated to collaborative working time, debugging, 
 
 <br>
 <br>
+
 ***
+
 <br>
 <br>
 
@@ -1085,7 +1196,9 @@ Anyone want to share what they've made?
 
 <br>
 <br>
+
 ***
+
 <br>
 <br>
 
