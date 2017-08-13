@@ -80,7 +80,7 @@ The workshop is aimed to be as inclusive as possible and therefore we develop ou
 
 Please sign in here & feel free to document, ask questions, or make comments on this collaborative etherpad:
 
-<center>👉<a href="https://public.etherpad-mozilla.org/p/foss4g-tilehutjs-workshop" target="_blank">Workshop Etherpad</a>👈 </center>
+<center> <p>👉<a href="https://public.etherpad-mozilla.org/p/foss4g-tilehutjs-workshop" target="_blank">Workshop Etherpad</a>👈 </p></center>
 
 
 
@@ -216,8 +216,9 @@ I made a few attempts to prepare the data in a way that might help us to communi
 For the purpose of this workshop, we will use this routed dataset to produce our visualization and learn about serving and styling vector tiles along the way.
 
 
-<center>👉 The routed data are in: <a href="data/201701_hubway_routes_all.geojson" target="_blank">ata/201701_hubway_routes_all.geojson</a> 👈</center>
-<center>👉 The hubway stops are in: <a href="data/hubway_Stations_201606.geojson" target="_blank">data/hubway_Stations_201606.geojson</a> 👈</center>
+<center> <p>👉 The routed data are in: <a href="data/201701_hubway_routes_all.geojson" target="_blank">ata/201701_hubway_routes_all.geojson</a> 👈 </p></center>
+
+<center><p>👉 The hubway stops are in: <a href="data/hubway_Stations_201606.geojson" target="_blank">data/hubway_Stations_201606.geojson</a> 👈 </p></center>
 
 <br>
 <br>
