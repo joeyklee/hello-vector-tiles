@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8' />
+    <title>Tilehut.js Vector Map with Mapbox GL JS</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <link href='https://api.mapbox.com/mapbox-gl-js/v0.39.1/mapbox-gl.css' rel='stylesheet' />
+    <style>
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    #map {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+    }
+    </style>
+</head>
+
+<body>
+    <!-- jquery -->
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.min.js"
+      integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      crossorigin="anonymous"></script>
+    <!-- mapbox -->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v0.39.1/mapbox-gl.js'></script>
+    <!-- map container -->
+    <div id='map'></div>
+    <script type="text/javascript">
+    $(document).ready(function() {
+        // mapbox example access token
+        mapboxgl.accessToken = 'pk.eyJ1Ijoiam9leWtsZWUiLCJhIjoiMlRDV2lCSSJ9.ZmGAJU54Pa-z8KvwoVXVBw';
+
+        // here we start out with a mapbox predefined style
+        // in order to add our own tiles and styles, we need
+        // to use the .addLayer() function you see below...
+        // ... because we're adding a layer.
+        var map = new mapboxgl.Map({
+            container: 'map',
+            scrollZoom: true,
+            center: [-71.0784, 42.3527],
+            zoom: 12,
+            hash: false, // adds zoom level and coordinates in the url (e.g. http://localhost:8080/#3.84/58.63/43.81)
+            style: "mapbox://styles/mapbox/light-v9"
+        });
+
+        // wait unti the map is all loaded then...
+        map.on('load', function() {
+
+            var hubwayStationStyle,
+                hubwayLabelStyle,
+                hubwayTripStyle,
+                hubwayTripHighlightStyle;
+            // add the hubway stations as geojson
+            // we need to use a json get request to get our data
+            $.getJSON("hubway_Stations_201606.geojson", function(myStations) {
+                // we plug "myStations" which is the json data
+                // as our data source
+                map.addSource("station-geojson", {
+                    "type": "geojson",
+                    "data": myStations,
+                });
+
+                // add the data and style for the 
+                // hubway trips as a source
+                map.addSource('tilehut-hubway-routes', {
+                    "type": "vector",
+                    "tiles": [
+                        "https://hubway-tiles.herokuapp.com/hubway-routed/{z}/{x}/{y}.pbf"
+                    ]
+                });
+
+
+                hubwayStationStyle = {
+                    "id": "stations",
+                    "source": "station-geojson",
+                    "visiblity": "visible",
+                    "paint": {
+                        "circle-radius": {
+                            "base": 1,
+                            "stops": [
+                                [12, 2],
+                                [16, 4]
+                            ]
+                        },
+                        "circle-color": "#FF00FF",
+                        "circle-blur": 0,
+                        "circle-opacity": 1,
+                        "circle-stroke-width": 3,
+                        "circle-stroke-color": "#FFFFFF",
+                        "circle-stroke-opacity": 0.9
+                    },
+                    "type": "circle"
+                };
+
+                hubwayLabelStyle = {
+                    "id": "stations-labels",
+                    "source": "station-geojson",
+                    "visiblity": "visible",
+                    "paint": {
+                        "text-halo-width": 2,
+                        "text-halo-blur": 0.5,
+                        "text-halo-color": "#FFFFFF"
+                    },
+                    "layout": {
+                        "text-size": {
+                            "base": 1,
+                            "stops": [
+                                [12, 8],
+                                [16, 10]
+                            ]
+                        },
+                        "text-field": "{Station name}",
+                        "text-font": ["Open Sans Semibold", "Arial Unicode MS Bold"],
+                        "text-offset": [0, 0.6],
+                        "text-anchor": "top",
+                        "text-padding": 20
+                    },
+                    "type": "symbol"
+                };
+
+                // define the style of our trips
+                hubwayHaloTripStyle = {
+                    "id": "hubway-routed-halo",
+                    "source": "tilehut-hubway-routes",
+                    "source-layer": "hubwayRouted",
+                    "paint": {
+                        "line-color": "#15a29a",
+                        "line-opacity": 1,
+                        "line-blur": 2,
+                        "line-width": {
+                            "property": "count",
+                            "base": 1,
+                            "stops": [
+                                [
+                                    1,
+                                    1
+                                ],
+                                [
+                                    200,
+                                    10
+                                ]
+                            ]
+                        }
+                    },
+                    "type": "line",
+                    "line-cap": "round",
+                    "line-join": "round"
+                };
+
+                hubwayTripStyle = {
+                    "id": "hubway-routed",
+                    "source": "tilehut-hubway-routes",
+                    "source-layer": "hubwayRouted",
+                    "paint": {
+                        "line-color": "#0c6964",
+                        "line-opacity": 0.5,
+                        "line-width": {
+                            "property": "count",
+                            "base": 1,
+                            "stops": [
+                                [
+                                    1,
+                                    0.5
+                                ],
+                                [
+                                    200,
+                                    4
+                                ]
+                            ]
+                        }
+                    },
+                    "type": "line",
+                    "line-cap": "round",
+                    "line-join": "round"
+                };
+
+                // add our trip halo style
+                map.addLayer(hubwayHaloTripStyle);
+                // add our trip layer style
+                map.addLayer(hubwayTripStyle);
+                // add station layer style
+                map.addLayer(hubwayStationStyle);
+                // add the labels style
+                map.addLayer(hubwayLabelStyle);
+
+
+
+                // When a click event occurs on a feature in the trips layer, open a popup at the
+                // location of the click, with description HTML from its properties.
+                map.on('click', 'hubway-routed', function (e) {
+                    new mapboxgl.Popup()
+                        .setLngLat(e.lngLat)
+                        .setHTML("<h3>total trips: " + e.features[0].properties.count + "</h3>")
+                        .addTo(map);
+                });
+
+                // Change the cursor to a pointer when the mouse is over the trips layer.
+                map.on('mouseenter', 'hubway-routed', function () {
+                    map.getCanvas().style.cursor = 'pointer';
+                });
+
+                // Change it back to a pointer when it leaves.
+                map.on('mouseleave', 'hubway-routed', function () {
+                    map.getCanvas().style.cursor = '';
+                });
+
+            });
+
+        })
+
+    })
+    </script>
+</body>
+
+</html>

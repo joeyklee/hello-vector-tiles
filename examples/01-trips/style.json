@@ -1,0 +1,41 @@
+{
+    "version": 8,
+    "sources": {
+        "tilehut": {
+            "type": "vector",
+            "tiles": [
+                "http://0.0.0.0:8000/hubway-routed/{z}/{x}/{y}.pbf"
+            ],
+            "maxzoom": 13
+        }
+    },
+    "layers": [{
+        "id": "background",
+        "paint": {
+            "background-color": "#000000"
+        },
+        "type": "background"
+    }, {
+        "id": "hubway-routed",
+        "source": "tilehut",
+        "source-layer": "hubwayRouted",
+        "paint": {
+            "line-color": "#15a29a",
+            "line-opacity": 1,
+            "line-width": {
+              "base": 1,
+              "stops": [
+                [
+                  0,
+                  0.5
+                ],
+                [
+                  5,
+                  4
+                ]
+              ]
+            }
+        },
+        "type": "line"
+    }]
+}

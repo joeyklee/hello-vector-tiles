@@ -1,0 +1,1666 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>README</title>
+
+
+<style type="text/css">
+body {
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  padding: 30px; }
+
+body > *:first-child {
+  margin-top: 0 !important; }
+body > *:last-child {
+  margin-bottom: 0 !important; }
+
+a {
+  color: #4183C4; }
+a.absent {
+  color: #cc0000; }
+a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  cursor: text;
+  position: relative; }
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA09pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoMTMuMCAyMDEyMDMwNS5tLjQxNSAyMDEyLzAzLzA1OjIxOjAwOjAwKSAgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUM2NjlDQjI4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUM2NjlDQjM4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5QzY2OUNCMDg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5QzY2OUNCMTg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsQhXeAAAABfSURBVHjaYvz//z8DJYCRUgMYQAbAMBQIAvEqkBQWXI6sHqwHiwG70TTBxGaiWwjCTGgOUgJiF1J8wMRAIUA34B4Q76HUBelAfJYSA0CuMIEaRP8wGIkGMA54bgQIMACAmkXJi0hKJQAAAABJRU5ErkJggg==) no-repeat 10px center;
+  text-decoration: none; }
+
+h1 tt, h1 code {
+  font-size: inherit; }
+
+h2 tt, h2 code {
+  font-size: inherit; }
+
+h3 tt, h3 code {
+  font-size: inherit; }
+
+h4 tt, h4 code {
+  font-size: inherit; }
+
+h5 tt, h5 code {
+  font-size: inherit; }
+
+h6 tt, h6 code {
+  font-size: inherit; }
+
+h1 {
+  font-size: 28px;
+  color: black; }
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #cccccc;
+  color: black; }
+
+h3 {
+  font-size: 18px; }
+
+h4 {
+  font-size: 16px; }
+
+h5 {
+  font-size: 14px; }
+
+h6 {
+  color: #777777;
+  font-size: 14px; }
+
+p, blockquote, ul, ol, dl, li, table, pre {
+  margin: 15px 0; }
+
+hr {
+  background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x 0 0;
+  border: 0 none;
+  color: #cccccc;
+  height: 4px;
+  padding: 0;
+}
+
+body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+body > h1:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+  body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0; }
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0; }
+
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
+  margin-top: 0; }
+
+li p.first {
+  display: inline-block; }
+li {
+  margin: 0; }
+ul, ol {
+  padding-left: 30px; }
+
+ul :first-child, ol :first-child {
+  margin-top: 0; }
+
+dl {
+  padding: 0; }
+  dl dt {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0;
+    margin: 15px 0 5px; }
+    dl dt:first-child {
+      padding: 0; }
+    dl dt > :first-child {
+      margin-top: 0; }
+    dl dt > :last-child {
+      margin-bottom: 0; }
+  dl dd {
+    margin: 0 0 15px;
+    padding: 0 15px; }
+    dl dd > :first-child {
+      margin-top: 0; }
+    dl dd > :last-child {
+      margin-bottom: 0; }
+
+blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777; }
+  blockquote > :first-child {
+    margin-top: 0; }
+  blockquote > :last-child {
+    margin-bottom: 0; }
+
+table {
+  padding: 0;border-collapse: collapse; }
+  table tr {
+    border-top: 1px solid #cccccc;
+    background-color: white;
+    margin: 0;
+    padding: 0; }
+    table tr:nth-child(2n) {
+      background-color: #f8f8f8; }
+    table tr th {
+      font-weight: bold;
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr td {
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr th :first-child, table tr td :first-child {
+      margin-top: 0; }
+    table tr th :last-child, table tr td :last-child {
+      margin-bottom: 0; }
+
+img {
+  max-width: 100%; }
+
+span.frame {
+  display: block;
+  overflow: hidden; }
+  span.frame > span {
+    border: 1px solid #dddddd;
+    display: block;
+    float: left;
+    overflow: hidden;
+    margin: 13px 0 0;
+    padding: 7px;
+    width: auto; }
+  span.frame span img {
+    display: block;
+    float: left; }
+  span.frame span span {
+    clear: both;
+    color: #333333;
+    display: block;
+    padding: 5px 0 0; }
+span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-center > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: center; }
+  span.align-center span img {
+    margin: 0 auto;
+    text-align: center; }
+span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px 0 0;
+    text-align: right; }
+  span.align-right span img {
+    margin: 0;
+    text-align: right; }
+span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left; }
+  span.float-left span {
+    margin: 13px 0 0; }
+span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right; }
+  span.float-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: right; }
+
+code, tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px; }
+
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent; }
+
+.highlight pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+  pre code, pre tt {
+    background-color: transparent;
+    border: none; }
+
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+
+kbd {
+  display: inline-block;
+  padding: 3px 5px;
+  font-size: 11px;
+  line-height: 10px;
+  color: #555;
+  vertical-align: middle;
+  background-color: #fcfcfc;
+  border: solid 1px #ccc;
+  border-bottom-color: #bbb;
+  border-radius: 3px;
+  box-shadow: inset 0 -1px 0 #bbb
+}
+
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:0 auto;
+    }
+}
+@media print {
+	table, pre {
+		page-break-inside: avoid;
+	}
+	pre {
+		word-wrap: break-word;
+	}
+}
+</style>
+
+<style type="text/css">
+/**
+ * prism.js default theme for JavaScript, CSS and HTML
+ * Based on dabblet (http://dabblet.com)
+ * @author Lea Verou
+ */
+
+code[class*="language-"],
+pre[class*="language-"] {
+	color: black;
+	background: none;
+	text-shadow: 0 1px white;
+	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
+code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
+	text-shadow: none;
+	background: #b3d4fc;
+}
+
+pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
+code[class*="language-"]::selection, code[class*="language-"] ::selection {
+	text-shadow: none;
+	background: #b3d4fc;
+}
+
+@media print {
+	code[class*="language-"],
+	pre[class*="language-"] {
+		text-shadow: none;
+	}
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+	padding: 1em;
+	margin: .5em 0;
+	overflow: auto;
+}
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+	background: #f5f2f0;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+	padding: .1em;
+	border-radius: .3em;
+	white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: slategray;
+}
+
+.token.punctuation {
+	color: #999;
+}
+
+.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: #905;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #690;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+	color: #a67f59;
+	background: hsla(0, 0%, 100%, .5);
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+	color: #07a;
+}
+
+.token.function {
+	color: #DD4A68;
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+	color: #e90;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+</style>
+
+
+</head>
+
+<body>
+
+<h1 id="toc_0">Slippy maps, you complete me: A friendly step-by-step guide to serving up your own slippy web map tiles with tilehut.js</h1>
+
+<p>Whether you&#39;re a full-time geo-web developer or a hobby map maker, chances are you&#39;ve used and even created your own slippy web map tiles. However, until now, the process for creating your own map tile server hasn&#39;t been so user friendly and accessible to the wider geocommunity. In this workshop, we will step you through the process of serving up your own slippy map tiles using tilehut.js - a modest, cozy, and open source home for your map tiles. As a participant, you will: 1. learn to create your own map tiles - we will focus on vector tiles, 2. create your own map tile server to show the world your geodata creations and 3. see how to bring your tiles into your web mapping projects. Participants will leave the workshop with a workflow for going from A (raw data) to B (an interactive web map) that they can apply in their own projects in the future. </p>
+
+<p>Half day (4 hours) </p>
+
+<p>The workshop is aimed to be as inclusive as possible and therefore we develop our materials with beginners in mind. However, we acknowledge the existence of handful of technologies that may be unfamiliar to those who are just getting started in web development/programming (e.g. Node.js, javascript, and the command line). That being said, we are happy if participants have a basic level computational literacy and have some exposure to mapping tools such as Tilemill, Mapbox Studio, or Maputnik, and web mapping libraries such as leaflet.js and Mapboxgl.js. </p>
+
+<!-- ********** REQUIREMENTS ********** -->
+
+<h2 id="toc_1">Requirements:</h2>
+
+<p>⚠️ <strong>NOTE: originally the workshop was planned around using Openshift as a free service to run our tileserver. With the phasing out of the Openshift 2 service, I&#39;ve had to make some last minute solutions using another platform-as-a-service (PaaS) called <a href="heroku.com">Heroku</a>. Tilehut.js hasn&#39;t been tested as extensively as with Openshift nor is it very scalable running on Heroku, but I will follow up post-workshop with a better solution. For now, I hope you all will learn something new today. Thanks for understanding.</strong> ⚠️</p>
+
+<ol>
+<li><strike>an account with OpenShift created before the workshop (free)</strike> ==&gt; An account with <a href="https://dashboard.heroku.com/">Heroku</a> and <a href="https://devcenter.heroku.com/articles/heroku-cli">Heroku&#39;s commandline tools</a> (free)</li>
+<li><strike>cyberduck or some ftp client installed before the workshop (free)</strike></li>
+<li><a href="">node.js</a> installed on  your computer (free)</li>
+<li><a href="https://git-scm.com/">git</a> &amp; <a href="https://desktop.github.com/">github desktop</a> (or an equivalent, optional) installed on your computer</li>
+<li>willingness to help your neighbor if they are having trouble (priceless)</li>
+<li>curiosity and enthusiasm to learn with interesting and interested people (priceless)</li>
+<li><a href="https://goo.gl/forms/mtNmOMfWfQOpCKbC2">Pre-survey for FOSS4G2017 to gauge understanding</a> (optional, but appreciated 😊)</li>
+</ol>
+
+<!-- ********** OUTLINE & ITINERARY ********** -->
+
+<h2 id="toc_2">Outline &amp; Itinerary:</h2>
+
+<ul>
+<li>Introduction &amp; Overview of the session and outcomes</li>
+<li><strong>Part 1</strong>: Geojournies begin with data
+
+<ul>
+<li>overview of the data</li>
+</ul></li>
+<li><strong>Part 2</strong>: Converting data with Tippecanoe
+
+<ul>
+<li>create some map tiles from a geojson file using Mapbox&#39;s Tippecanoe<br></li>
+</ul></li>
+<li><strong>Part 3</strong>: Our very own Tilehut
+
+<ul>
+<li>setup tilehut.js and serve up the tiles made in Part 2</li>
+</ul></li>
+<li><strong>Part 4</strong>: vector tiles with styles and more
+
+<ul>
+<li>begin working with the Mapbox GL API for styling the vector tiles being served in Part 2</li>
+<li>display your project as a web map</li>
+</ul></li>
+<li><strong>Part 5</strong>: Deploy Tilehut and show the world your maps!
+
+<ul>
+<li>deploy tilehut.js to heroku and show your map to the world</li>
+</ul></li>
+<li><strong>Part 6</strong>: working time + debugging
+
+<ul>
+<li>take time to revisit learned items, debug setup issues, and work on your own data. </li>
+</ul></li>
+<li>Outro, feedback, and shareouts</li>
+</ul>
+
+<!-- ********** COLLABORATION PAD ********** -->
+
+<h2 id="toc_3">Collaboration Pad</h2>
+
+<p>Please sign in here &amp; feel free to document, ask questions, or make comments on this collaborative etherpad:</p>
+
+<p><center>👉<a href="https://public.etherpad-mozilla.org/p/foss4g-tilehutjs-workshop">Workshop Etherpad</a>👈 </center></p>
+
+<p><br>
+<br></p>
+
+<hr>
+
+<p><br>
+<br></p>
+
+<!-- ********** WORKSHOP START ********** -->
+
+<h1 id="toc_4">3...2...1 Let&#39;s go!</h1>
+
+<!-- ********** INTRODUCTION ********** -->
+
+<h2 id="toc_5">Introduction</h2>
+
+<ul>
+<li>I&#39;m joey, your workshop host.</li>
+<li><p>Say hello to eachother! </p></li>
+<li><p>What we&#39;re going to accomplish today:</p>
+
+<ul>
+<li>today we&#39;re going to be looking at <a href="https://www.thehubway.com/datachallenge">Boston&#39;s hubway data</a> from the 2017 Hubway Visualization challenge.</li>
+<li>Hubway is a bike sharing service in the Boston Metro area.</li>
+<li>We are going to visualize two main features from the January 2017 dataset:
+
+<ul>
+<li>the count of trips to-and-from each station</li>
+<li>the total sum time of the trips to-and-from each station</li>
+</ul></li>
+</ul></li>
+<li><p>how are we going to do it?</p>
+
+<ul>
+<li>we will use Tippecanoe: a commandline tool to convert our geojson data to vector tiles</li>
+<li>we will serve up our tiles using Tilehut.js</li>
+<li>we will learn to style our data using the mapbox gl API for vector tile specifications</li>
+<li>and finally, we will make a little web visualization that shows our data using a provided html/js/css template.</li>
+</ul></li>
+</ul>
+
+<p><br>
+<br></p>
+
+<hr>
+
+<p><br>
+<br></p>
+
+<!-- ********** Part 1 ********** -->
+
+<h2 id="toc_6">Part 1: Geojournies begin with data</h2>
+
+<p><img src="assets/images/hubway-counts-routed.png" alt="image of hubway counts between stops"></p>
+
+<p><br></p>
+
+<h3 id="toc_7">Introduction to the data</h3>
+
+<p>For this workshop, I&#39;ve prepared <a href="https://www.thehubway.com/system-data">1 month of Boston&#39;s Hubway Bike Service data</a> from January 2017.  Why January? one of the coldest months of the year? </p>
+
+<blockquote>
+<p>I made the assumption that there would probably be less trips ==&gt; meaning a smaller dataset for us to work with ==&gt; more efficient for the workshop, yet still interesting. (Hooray for data management!)</p>
+</blockquote>
+
+<!--You can get the [raw data here](https://www.thehubway.com/system-data).-->
+
+<p>The data we will work with are: </p>
+
+<blockquote>
+<ol>
+<li>the counts of the trips to-and-from each station, </li>
+<li>the sum time of the trips to-and-from each station, and </li>
+<li>the Hubway Stations</li>
+</ol>
+</blockquote>
+
+<p>I used a <code>group-by</code> function to group the data in a python script which you can find <a href="scripts/analysis.py">here</a>. The data come in a <code>csv</code> file with the following fields which are all pretty self explanatory:</p>
+
+<blockquote>
+<ul>
+<li>&#39;start station id&#39;</li>
+<li>&#39;start station name&#39;</li>
+<li>&#39;start station latitude&#39;</li>
+<li>&#39;start station longitude&#39;</li>
+<li>&#39;end station id&#39;</li>
+<li>&#39;end station name&#39;</li>
+<li>&#39;end station latitude&#39;</li>
+<li>&#39;end station longitude&#39;</li>
+<li>&#39;count&#39;</li>
+<li>&#39;total_duration&#39; (in seconds)</li>
+</ul>
+</blockquote>
+
+<p><br></p>
+
+<h3 id="toc_8">Sketching with 🚴 data</h3>
+
+<p>I made a few attempts to prepare the data in a way that might help us to communicate the volume of Hubway trips occuring across Boston. Here&#39;s what I tried:</p>
+
+<blockquote>
+<p><strong>Attempt 1 - as the crow flies origin-destination(OD):</strong> As you can see the data just have a <code>start</code> location and <code>end</code> location, which when you mapped, look rather hard to read, but you can still see some patterns emerge.</p>
+</blockquote>
+
+<p><img src="assets/images/hubway-counts-linear.png" alt="Hubway trips as linear lines"></p>
+
+<blockquote>
+<p><strong>Attempt 2 - Bezier ODs:</strong> I tried to add some arcs to see if maybe aesthetically we could squeeze out some love, but I&#39;m not sure that this is so readable either. #thosecurvestho </p>
+</blockquote>
+
+<p><img src="assets/images/hubway-counts-bezier.png" alt="Hubway trips as bezier curves"></p>
+
+<blockquote>
+<p><strong>Solution - Routed ODs:</strong> Lastly, I decided to plug in all those bike trips into <a href="https://github.com/graphhopper/graphhopper">Graphhopper</a>, which is pretty much my favorite open source routing engine at the moment (shout out to @graphhopper for making great stuffs!) to <em>take a guess</em> at where all those trips might have taken place along roads and bike paths throughout Metro Boston. The results look quite convincing - if any native Bostonians might be able to validate, that would be super! </p>
+</blockquote>
+
+<p><img src="assets/images/hubway-counts-routed.png" alt="Hubway trips routed using Graphhopper"></p>
+
+<p>For the purpose of this workshop, we will use this routed dataset to produce our visualization and learn about serving and styling vector tiles along the way.</p>
+
+<p><center>👉 The routed data are in: <a href="data/201701_hubway_routes_all.geojson"><code>data/201701_hubway_routes_all.geojson</code></a> 👈</center>
+<center>👉 The hubway stops are in: <a href="data/hubway_Stations_201606.geojson"><code>data/hubway_Stations_201606.geojson</code></a> 👈</center></p>
+
+<p><br>
+<br></p>
+
+<hr>
+
+<p><br>
+<br></p>
+
+<!-- ********** Part 2 ********** -->
+
+<h2 id="toc_9">Part 2: Converting data with Tippecanoe</h2>
+
+<p><br></p>
+
+<h3 id="toc_10">What&#39;s a Tippecanoe?</h3>
+
+<p>So now we&#39;ve got our bike data bound up in our friendly, but bloated geojson file format. Aren&#39;t you just itching to pack up all up into this wonderfully efficient, web friendly thing we call Vector tiles? </p>
+
+<p>There are a number of ways to achieve this, but the way we&#39;re going to do it today is by using an opensource tool by <a href="mapbox.com">Mapbox</a> called <a href="https://github.com/mapbox/tippecanoe">Tippecanoe</a>. I&#39;m not sure why it is called Tippecanoe, but it is a lovely name and an even lovelier piece of software. The intention behind <a href="https://github.com/mapbox/tippecanoe">Tippecanoe</a> is to not have to forefeit the details of our data especially when they matter most. <a href="https://github.com/mapbox/tippecanoe">Tippecanoe</a> does this by taking advantage of some <a href="">handy tricks</a> such as zoom level based point aggregation and other methods.</p>
+
+<p><br></p>
+
+<h3 id="toc_11">Installation</h3>
+
+<p>If you haven&#39;t installed <a href="https://github.com/mapbox/tippecanoe">Tippecanoe</a>, we can do this together later or you can follow the instructions on the project webpage <a href="https://github.com/mapbox/tippecanoe">here</a>. Easiest is if you use <a href="https://brew.sh/">Homebrew</a> for OSX or <a href="https://www.docker.com/">Docker</a>. </p>
+
+<p><br></p>
+
+<h3 id="toc_12">Converting our routed bike trips</h3>
+
+<p><img src="assets/images/tippecanoe-route-zoomy.gif" alt="Routed trips as vector tiles!"></p>
+
+<p>Fire up your terminal and enter the following:</p>
+
+<div><pre><code class="language-none"># change directories
+cd data
+
+# run the conversion
+tippecanoe -o hubway-routed.mbtiles -maximum-zoom 13 -l hubwayRouted 201701_hubway_routes_all.geojson </code></pre></div>
+
+<p>What&#39;s happening here: </p>
+
+<blockquote>
+<ul>
+<li><strong>tippecanoe</strong>: this calls the tippecanoe function</li>
+<li><strong>-o  hubway-routed.mbtiles</strong>: says, &quot;our output file will be called hubway-routed.mbtiles in the data folder&quot;</li>
+<li><strong>-l hubwayRouted</strong>: says, &quot;call our mbtiles hubwayRouted&quot; - we will need this for when we style our tiles; without this, it would call it the name of the file &quot;201701hubwayroutesallgeojson&quot; and that&#39;s not so nice.</li>
+<li><strong>-maximum-zoom 13</strong>: tells tippecanoe to only produce tiles to a max of zoom level 13.</li>
+<li><strong>201701<em>hubway</em>routes_all.geojson</strong>: is the geojson file of our routed bike trips.</li>
+</ul>
+</blockquote>
+
+<p>The result will be an a file in your data folder called: <a href="data/hubway-routed.mbtiles">hubway-routed.mbtiles</a></p>
+
+<p>More on the various Tippecanoe flags can be read about <a href="">here</a>.</p>
+
+<p>In this workshop we aren&#39;t going to convert the stations to vector .mbtiles for a number of reasons: </p>
+
+<blockquote>
+<ul>
+<li>first, the stations are only a few kilobytes (~32) which aren&#39;t going to melt your browser, </li>
+<li>second, that gives us an opportunity to work with some other aspects of mapbox GL&#39;s api. </li>
+</ul>
+</blockquote>
+
+<p><br></p>
+
+<h3 id="toc_13">A note on handling points</h3>
+
+<p>If you do find yourself in the position where you need to convert points, know that Tippecanoe is programmed to optimize for things like redundant features for certain zoom levels and other situations. For example if you want to show some points and make sure they don&#39;t get aggregated into hiding, you might say:</p>
+
+<div><pre><code class="language-none">tippecanoe -o mypoints.mbtiles --maximum-zoom 5 --drop-rate 5 --drop-fraction-as-needed mypoints.geojson</code></pre></div>
+
+<blockquote>
+<p>What it says is: &quot;create tiles for the max zoom level of 5, and set the rate at which dots are dropped at zoom levels below basezoom (default 2.5) to 5&quot; - So basically don&#39;t aggregate points until after the max zoom. It took me a while to figure out why my points were disappearing when it didn&#39;t make sense for them to not be displayed...</p>
+</blockquote>
+
+<p>On the flip side, if you want to handle a bunch of points and you need some fancy ways to take care of this, you can give <a href="https://blog.mapbox.com/mapping-extremely-dense-point-data-with-vector-tiles-4052eb409e78">this a blog post a read</a>.</p>
+
+<p><br>
+<br></p>
+
+<hr>
+
+<p><br>
+<br></p>
+
+<!-- ********** Part 3 ********** -->
+
+<h2 id="toc_14">Part 3: Our very own Tilehut</h2>
+
+<p><img src="https://github.com/b-g/tilehut/blob/master/assets/tilehutjs_title.png?raw=true" alt=""></p>
+
+<p>So now that we&#39;ve got our bike trip tiles created, it&#39;s time to get our tile server up and running. Ooh so exciting!</p>
+
+<p>There&#39;s a number of platform-as-a-service (PaaS) services that, among many things, act as tileservers. You might be familiar with some of the bigger ones like Mapbox, Carto, and Mapzen, but there are plenty of others that you can brew up on your own. </p>
+
+<p>For this workshop, I&#39;m going to introduce you to <a href="https://github.com/b-g/tilehut">Tilehut.js</a>, a little tileserver that I worked on with a few of my friends to help make it easier to host your own interactive raster and vector tiles. Tilehut.js is just wrapper for a lot of the existing tileserving technology like <a href="http://tilestache.org/">Mike Migurski&#39;s Tilestache</a> and Mapbox&#39;s <a href="https://github.com/mapbox/node-mbtiles">node-mbtiles</a> that was born out of our own want/need to have a bit more control over our data as well as room to experiment. So let&#39;s get Tilehut.js running, shall we?</p>
+
+<p><br></p>
+
+<h3 id="toc_15">Install Tilehut</h3>
+
+<p>To install (requires Node.js installed) :</p>
+
+<blockquote>
+<ol>
+<li>Clone or download the zip of the <strong>TILEHUT-HEROKU Branch of Tilhut.js</strong> from: <a href="https://github.com/b-g/tilehut/tree/tilehut-heroku">https://github.com/b-g/tilehut/tree/tilehut-heroku</a>. </li>
+<li>Fire up your terminal and run:</li>
+</ol>
+</blockquote>
+
+<div><pre><code class="language-none"># change into the tilehut directory
+cd tilehut
+# this installs all the dependencies
+npm install 
+# this starts the server
+node server.js
+# check in your browser: http://localhost:8000/tiles-world-simple/map/</code></pre></div>
+
+<p>If you see a world map on your screen, you&#39;ve successfully installed Tilehut.js locally on your machine! We are going to work locally for now but we will setup Tilehut.js on <strike>OpenShift</strike> Heroku so you can show off your data to the world 🌎</p>
+
+<p><img src="assets/images/tilehut-simple-world.png" alt=""></p>
+
+<p>For now, let&#39;s explore Tilehut.js a bit. </p>
+
+<p><em>If you&#39;re so inclined, you are also welcome to use <a href="https://hub.docker.com/r/joeyklee/tilehut-docker/">tilehut-docker</a>. NOTE: you will have to change the <code>config.js</code> for things to work correctly with Heroku since that docker image reflects the setup for OpenShift.</em></p>
+
+<p><br></p>
+
+<h3 id="toc_16">Poke around and inspect</h3>
+
+<p>You&#39;re probably thinking, &quot;holy guacamole, I never knew it would be so simple to serve up my own tiles!&quot;. If not, then here&#39;s a link to something <a href="https://www.youtube.com/watch?v=bZ5Gzx7KKqg">even more impressive</a>. But while you&#39;re here, let&#39;s look into what is included in this Tilehut.js directory.</p>
+
+<p><img src="assets/images/tilehut-folder-items.png" alt="Tilehut.js directory items"></p>
+
+<p>So here&#39;s all the subdirectories and files you see that make up Tilehut.js. The ones without a line crossed through them are relevant for you:</p>
+
+<blockquote>
+<ul>
+<li>LICENSE.txt<br></li>
+<li><strike> assets</strike></li>
+<li>examples<br></li>
+<li><strike>server.js</strike></li>
+<li>README.md<br></li>
+<li><strike>config.js </strike><br></li>
+<li><strike>node_modules </strike><br></li>
+<li><strike>static</strike></li>
+<li><strike>TileService.js</strike> </li>
+<li>data<br></li>
+<li><strike>package.json</strike> </li>
+<li>tutorial</li>
+</ul>
+</blockquote>
+
+<p>That leaves us with:</p>
+
+<blockquote>
+<ul>
+<li><strong>LICENSE.txt</strong>: It&#39;s the BSD 2-clause &quot;Simplified&quot; License</li>
+<li><strong>examples</strong>: a folder of examples that show how to use Tilehut.js with raster and vector tiles.</li>
+<li><strong>data</strong>: this is where we&#39;re going to put our vector .mbtiles!</li>
+<li><strong>README.md</strong>: lots of handy info here<br></li>
+<li><strong>tutorial</strong>: a detailed tutorial on how to produce raster and vector tiles and how to setup tilehut locally and on openshift. This workshop is a remix/builds on top of the tutorial included in this directory.</li>
+</ul>
+</blockquote>
+
+<p><br></p>
+
+<h3 id="toc_17">Breaking down the vector tile example</h3>
+
+<p>Since we&#39;re going to be working with vector tiles, let&#39;s have a look at the <code>examples/simplemap_vector</code> directory. Navigate over and double-click on <code>index.html</code>. you should see something like this:</p>
+
+<p><img src="assets/images/tilehut-world-vector.png" alt=""></p>
+
+<p>We have 2 files here:</p>
+
+<blockquote>
+<ul>
+<li>index.html</li>
+<li>style.json</li>
+</ul>
+</blockquote>
+
+<p><strong>index.html</strong>: If you open up the <code>index.html</code> file, you will see the following:</p>
+
+<p><img src="assets/images/tilehut-example-index-script-highlight.png" alt=""></p>
+
+<p>You&#39;ll notice: </p>
+
+<blockquote>
+<ul>
+<li>I&#39;ve highlighted the javascript code between the <code>&lt;script&gt;&lt;/script&gt;</code> tags</li>
+<li>and pointed to ↩︎ the property called <code>style.json</code>. You might be thinking, &quot;is this is the reference to <em>our</em> <code>style.json</code> in our folder?&quot; You bet it is! </li>
+</ul>
+</blockquote>
+
+<p><strong>style.json</strong>: so logicaly, we can deduce that our <code>style.json</code> is affecting the <code>style</code> of our map in this instance. Easy as pie 🍰. If we open our <code>style.json</code> file, we will see the following:</p>
+
+<p><img src="assets/images/tilehut-stylejson-annotated.png" alt=""></p>
+
+<p>You&#39;ll notice:</p>
+
+<blockquote>
+<ul>
+<li>we have a gobbley json file with three main properties:
+
+<ul>
+<li><code>version</code>: defines a version of the file</li>
+<li><code>sources</code>: defines the sources of where our tiles are coming from</li>
+<li><code>layers</code>: defines what layers will be displayed on the map. </li>
+</ul></li>
+</ul>
+</blockquote>
+
+<p>Lets break down <code>sources</code> and <code>layers</code> as these are important for the rest of our work:</p>
+
+<p><br></p>
+
+<h4 id="toc_18">Sources</h4>
+
+<p><img src="assets/images/tilehut-stylejson-sources.png" alt=""></p>
+
+<p>Our sources consist of a json object that could be read like this in pseudo-json-code by:</p>
+
+<div><pre><code class="language-none">sources: {
+  &quot;name of the source&quot;: {
+    &quot;type&quot;: &quot;the type of source&quot; // (vector or raster),
+    &quot;tiles&quot;: [
+        &quot;the url to the tiles being served&quot;
+    ],
+    &quot;maxzoom&quot;: 5 
+  }
+}</code></pre></div>
+
+<p>NOTE: the <code>type</code> of the source will change how the rest of the object is defined (e.g. for <code>&quot;type&quot;: &quot;geojson&quot;</code> vs. <code>&quot;type&quot;:&quot;image&quot;</code> vs. <code>&quot;type&quot;: &quot;video&quot;</code> vs. <code>&quot;type&quot;:&quot;vector&quot;</code>. For more info see: https://www.mapbox.com/mapbox-gl-js/api/#sources )</p>
+
+<p>Tilehut.js serves the <code>.mbtiles</code> in the <code>/data</code> folder like so:</p>
+
+<div><pre><code class="language-none">&quot;http://0.0.0.0:8000/the-name-of-your-mbtile-file/{z}/{x}/{y}.pbf&quot;</code></pre></div>
+
+<p>in this case:</p>
+
+<p><img src="assets/images/tilehut-folder-items-data-folder.png" alt=""></p>
+
+<div><pre><code class="language-none">&quot;http://0.0.0.0:8000/tiles-world-vector/{z}/{x}/{y}.pbf&quot;</code></pre></div>
+
+<p>Now you can imagine if you placed a <code>.mbtiles</code> file called, <code>hubway-routed.mbtiles</code> file in the <code>data</code> folder, your url might look like this... but we will get to this later:</p>
+
+<div><pre><code class="language-none">&quot;http://0.0.0.0:8000/hubway-routed/{z}/{x}/{y}.pbf&quot;</code></pre></div>
+
+<p><br></p>
+
+<h4 id="toc_19">Layers</h4>
+
+<p><img src="assets/images/tilehut-stylejson-layers.png" alt=""></p>
+
+<p>Our layers property is a <code>list</code> (a.k.a <code>array</code>) which contains the layers being showed on our map.</p>
+
+<p>Each layer in the list has more or less the following properties. More info can be found <a href="https://www.mapbox.com/mapbox-gl-js/style-spec/#layers">here</a>:</p>
+
+<blockquote>
+<ul>
+<li><strong>id</strong>: this is a unique name you come up with to reference your layer</li>
+<li><strong>source</strong>: this is the name of the source where your tiles came from</li>
+<li><strong>source-layer</strong>: this is the name <code>-l</code> we defined during our Tippecanoe conversion; here it is <code>countriesgeojson</code></li>
+<li><strong>visibility</strong>: this is whether the layer is visible or not, takes <code>true</code> or <code>false</code></li>
+<li><strong>paint</strong>: this is where you define all the style properties of the layer - it is as they say, where all the magic happens. Depending on the <code>type</code> of of the layer (explained next), you will have different options. We will explore these further in a bit.</li>
+<li><strong>filter</strong>: data in the tiles can be filtered according to the following structure - <a href="https://www.mapbox.com/mapbox-gl-js/style-spec/#types-filter">see reference here</a>.</li>
+<li><strong>type</strong>: this is the type of the layer. The types that can be defined will depend on the data in the <code>.mbtiles</code>. The current types are:
+
+<ul>
+<li><strong>fill</strong>: A filled polygon with an optional stroked border.</li>
+<li><strong>line</strong>: A stroked line.</li>
+<li><strong>symbol</strong>: An icon or a text label.</li>
+<li><strong>circle</strong>: A filled circle.</li>
+<li><strong>fill-extrusion</strong>: An extruded (3D) polygon.</li>
+<li><strong>raster</strong>: Raster map textures such as satellite imagery.</li>
+<li><strong>background</strong>: The background color or pattern of the map.</li>
+</ul></li>
+</ul>
+</blockquote>
+
+<p>In the case of our example map, we can see that we have 2 layers defined by the ids:</p>
+
+<blockquote>
+<ul>
+<li>background</li>
+<li>countries-fill</li>
+</ul>
+
+<p><strong>background</strong> is a type of layer that can be included in any project. We define this <code>background-color</code> with a hexcode. Want to try changing it? Go ahead! Need a suggestion, try: <code>#deeded</code></p>
+
+<p><strong>countries-fill</strong>: is a <code>type:fill</code> layer which is used for polygons. Since our countries are polygons, this makes sense.  Here you can see we&#39;ve correctly defined <code>source: tilehut</code>, and <code>source-layer: countriesgeojson</code> which is what the .mbtiles name is . Why don&#39;t you try changing the <code>fill-color</code> and the <code>fill-outline-color</code> to <code>#cadfad</code>. Don&#39;t be shy, it won&#39;t break! </p>
+</blockquote>
+
+<p>you might end up with something like this:</p>
+
+<p><img src="assets/images/tilehut-countries-style-change.png" alt=""></p>
+
+<p><strong>NOTE</strong>: If you ever are wondering why your styles aren&#39;t working, make sure to check that you&#39;ve correctly defined the <code>type</code> property!</p>
+
+<p><br></p>
+
+<h4 id="toc_20">Getting the meta information from your tiles: meta.json</h4>
+
+<p>At some point you will have to check what a vector tile layer is called. This isn&#39;t apparent by the file name itself, but you can dig into the details of a vector tile layer by you can quering it using Tilehut by using the <code>/meta.json</code> endpoint:</p>
+
+<div><pre><code class="language-none">&quot;http://0.0.0.0:8000/the-name-of-your-mbtile-file/meta.json&quot;
+
+or, in this case:
+
+&quot;http://0.0.0.0:8000/tiles-world-vector/meta.json&quot;</code></pre></div>
+
+<p>You will get back a result that looks like this:</p>
+
+<div><pre><code class="language-none">{
+  &quot;scheme&quot;: &quot;tms&quot;,
+  &quot;basename&quot;: &quot;tiles-world-vector.mbtiles&quot;,
+  &quot;id&quot;: &quot;tiles-world-vector&quot;,
+  &quot;filesize&quot;: 1703936,
+  &quot;name&quot;: &quot;tiles-world-vector.mbtiles&quot;,
+  &quot;description&quot;: &quot;tiles-world-vector.mbtiles&quot;,
+  &quot;version&quot;: &quot;2&quot;,
+  &quot;minzoom&quot;: 0,
+  &quot;maxzoom&quot;: 5,
+  &quot;center&quot;: [
+    16.875,
+    44.951199,
+    5
+  ],
+  &quot;bounds&quot;: [
+    -180,
+    -85.051129,
+    180,
+    83.633811
+  ],
+  &quot;type&quot;: &quot;overlay&quot;,
+  &quot;format&quot;: &quot;pbf&quot;,
+  &quot;vector_layers&quot;: [
+    {
+      &quot;id&quot;: &quot;countriesgeojson&quot;,
+      &quot;description&quot;: &quot;&quot;,
+      &quot;minzoom&quot;: 0,
+      &quot;maxzoom&quot;: 5,
+      &quot;fields&quot;: {}
+    }
+  ]
+}</code></pre></div>
+
+<p>In the <code>meta.json</code> you can see all sorts of information like the <code>id</code>, <code>center coordinates</code>, <code>filesize</code>, and so on.</p>
+
+<p>Before we continue, let&#39;s take a quick break before getting back into business. As a recap so far:</p>
+
+<p>We have:</p>
+
+<blockquote>
+<ol>
+<li>been introduced to the data we&#39;re using</li>
+<li>Used Tippecanoe to convert geojson to vector tiles</li>
+<li>Setup and navigated around Tilehut.js</li>
+</ol>
+</blockquote>
+
+<p><br>
+<br></p>
+
+<hr>
+
+<p><br>
+<br></p>
+
+<!-- ********** BREAK ********** -->
+
+<p>🎉❤️⚡️✨🦄🌈🎉❤️⚡️✨🦄🌈🎉❤️⚡️✨🦄🌈🎉❤️⚡️✨🦄🌈🎉❤️⚡️✨🦄🌈</p>
+
+<h1 id="toc_21">Intermission! <a href="https://github.com/mozillascience/working-open-workshop/issues/42">Open source stretch</a> + bio break</h1>
+
+<div><pre><code class="language-none">Reach up for all of our open source dreams (arms up)
+Reach down to the grassroots (reach toes)
+Come back up in the blowing of the winds of change (arms back and forth)
+Reach out and shake the money tree in time for grant applications (arms forward, shake imaginary tree)
+Lean left to avoid the NSA (hands on hips, lean left)
+Lean right to avoid the NSA (hands on hips, lean right)
+Go all around to avoid the NSA (hands on hips, lean all around)
+</code></pre></div>
+
+<p>🎉❤️⚡️✨🦄🌈🎉❤️⚡️✨🦄🌈🎉❤️⚡️✨🦄🌈🎉❤️⚡️✨🦄🌈🎉❤️⚡️✨🦄🌈</p>
+
+<p><br>
+<br></p>
+
+<hr>
+
+<p><br>
+<br></p>
+
+<!-- ********** Part 3.5 ********** -->
+
+<h2 id="toc_22">Part 3.5</h2>
+
+<p>In the next sections we are going to:</p>
+
+<blockquote>
+<ol>
+<li>serve up our bike trip vector tiles locally using Tilehut.js</li>
+<li>style our bike trip vector tiles and our bike station geojson using MapboxGL&#39;s vector tile specifications while looking at some code refactoring</li>
+<li>Setup Openshift and serve up our tiles to our own Tilehut server</li>
+</ol>
+</blockquote>
+
+<p><br></p>
+
+<h3 id="toc_23">Serve up your bike trips tiles</h3>
+
+<p>Let&#39;s start by throwing our hubway bike trips into our Tilehut <code>data/</code> folder. Take your <code>data/hubway-routed.mbtiles</code> from the workshop folder and move them ==&gt; to the <code>tilehut/data/</code> folder. </p>
+
+<p><img src="assets/images/tilehut-move-data.png" alt=""></p>
+
+<p>To check if the tiles are now in there, let&#39;s check the <code>meta.json</code> of our hubway trips by checking this url:</p>
+
+<div><pre><code class="language-none">&quot;http://0.0.0.0:8000/hubway-routed/meta.json&quot;</code></pre></div>
+
+<p>If all is good, we should see this:</p>
+
+<div><pre><code class="language-none">{
+  &quot;scheme&quot;: &quot;tms&quot;,
+  &quot;basename&quot;: &quot;hubway-routed.mbtiles&quot;,
+  &quot;id&quot;: &quot;hubway-routed&quot;,
+  &quot;filesize&quot;: 2404352,
+  &quot;name&quot;: &quot;data/hubway-routed.mbtiles&quot;,
+  &quot;description&quot;: &quot;data/hubway-routed.mbtiles&quot;,
+  &quot;version&quot;: &quot;2&quot;,
+  &quot;minzoom&quot;: 0,
+  &quot;maxzoom&quot;: 14,
+  &quot;center&quot;: [
+    -71.070557,
+    42.366661,
+    14
+  ],
+  &quot;bounds&quot;: [
+    -71.166373,
+    42.303396,
+    -71.005666,
+    42.401376
+  ],
+  &quot;type&quot;: &quot;overlay&quot;,
+  &quot;format&quot;: &quot;pbf&quot;,
+  &quot;vector_layers&quot;: [
+    {
+      &quot;id&quot;: &quot;hubwayRouted&quot;,
+      &quot;description&quot;: &quot;&quot;,
+      &quot;minzoom&quot;: 0,
+      &quot;maxzoom&quot;: 14,
+      &quot;fields&quot;: {
+        &quot;count&quot;: &quot;Number&quot;,
+        &quot;end_station_id&quot;: &quot;Number&quot;,
+        &quot;end_station_latitude&quot;: &quot;Number&quot;,
+        &quot;end_station_longitude&quot;: &quot;Number&quot;,
+        &quot;end_station_name&quot;: &quot;String&quot;,
+        &quot;id&quot;: &quot;String&quot;,
+        &quot;routeLink&quot;: &quot;String&quot;,
+        &quot;start_station_id&quot;: &quot;Number&quot;,
+        &quot;start_station_latitude&quot;: &quot;Number&quot;,
+        &quot;start_station_longitude&quot;: &quot;Number&quot;,
+        &quot;start_station_name&quot;: &quot;String&quot;,
+        &quot;total_duration&quot;: &quot;Number&quot;
+      }
+    }
+  ]
+}</code></pre></div>
+
+<p>If this isn&#39;t what you see, then check to make sure your tileserver is running and that you&#39;ve got the correct name to the <code>.mbtiles</code> file in the <code>tilehut/data</code> directory. Otherwise, now our tiles are being served and it&#39;s time to style &#39;em up!  </p>
+
+<p><br>
+<br></p>
+
+<hr>
+
+<p><br>
+<br></p>
+
+<!-- ********** Part 4 ********** -->
+
+<h2 id="toc_24">Part 4: vector tiles with styles and more</h2>
+
+<p>Here in part 4, we&#39;re going to simultaneously learn about: </p>
+
+<blockquote>
+<ol>
+<li>how to style our data using mapboxGL&#39;s vector tile specifications </li>
+<li>refactoring our existing code for more flexibility with styling</li>
+</ol>
+</blockquote>
+
+<p><br></p>
+
+<h3 id="toc_25">Examples/01-trips</h3>
+
+<p>Navigate over to our <code>examples/01-trips</code> folder and take a look inside. The files you see in there should look familiar, containing:</p>
+
+<blockquote>
+<ul>
+<li>index.html</li>
+<li>style.json</li>
+</ul>
+</blockquote>
+
+<p>Open the <code>index.html</code> file in your browser to see what is cooking. </p>
+
+<p><img src="assets/images/tilehut-example-trips.png" alt=""></p>
+
+<p>Lo and behold, our routed hubway trips! While the visualization is really simple and not that useful, our tiles are being served up as we expect. So that&#39;s a start. </p>
+
+<p>If you open up the <code>index.html</code> and the <code>style.json</code> files in your text editor, you will notice that the <code>index.html</code> file is identical to the example we saw earlier. However if we open our <code>style.json</code> file, we will see that there are some changes. </p>
+
+<p><img src="assets/images/tilehut-example-trips-stylejson.png" alt=""></p>
+
+<blockquote>
+<ul>
+<li>our <code>tiles url</code> now reflects the name of our tileset being served on our tileserver: <code>http://0.0.0.0:8000/hubway-routed/{z}/{x}/{y}.pbf</code></li>
+<li>we have a new <code>id</code> for our tileset, obviously different from that of our countries data we saw earlier</li>
+<li>we set the <code>source-layer: hubwayRouted</code> to what we named the tiles earlier in our Tippecanoe command; remember: you can use the <code>.../meta.json</code> api endpoint to tilehut to get the metadata of your tiles.</li>
+</ul>
+</blockquote>
+
+<p><br></p>
+
+<h3 id="toc_26">Examples/02-trips-refactored</h3>
+
+<p>Now navigate over to <code>examples/02-trips-refactored</code>. You will notice some key differences from our previous examples, namely:</p>
+
+<blockquote>
+<ul>
+<li><strong>FIRST:</strong> we have now a mapbox api key defined and replaced our map objects <code>style: &quot;style.json&quot;</code> with the Mapbox light-v9 style: <code>&quot;mapbox://styles/mapbox/light-v9&quot;</code> ==&gt; this means we now have a styled basemap shown.</li>
+</ul>
+</blockquote>
+
+<p><img src="assets/images/tilehut-added-mapbox-tiles.png" alt=""></p>
+
+<blockquote>
+<ul>
+<li><p><strong>SECOND:</strong> we introduce two main functions: <code>map.addSource() ... map.addLayer()</code>. These allow us to take an existing style, such as the Mapbox light-v9 style and add on top of that. This is really cool especially if you&#39;ve designed some sweet basemaps using Mapbox Studio, Maputnik or your editor of choice.  </p></li>
+<li><p><code>map.addSource(&quot;source-id&quot;, {object with the source definitions})</code></p>
+
+<ul>
+<li>description:</li>
+<li>this function adds a new source to our map. </li>
+<li>parameters:</li>
+<li><code>source-id</code>: 
+
+<ul>
+<li>this is a name of our source. So far we&#39;ve been calling our source &quot;tilehut&quot;, but you might venture so far as to calling it &quot;tilehut-trips&quot; or something else that reflects what we&#39;re looking at.</li>
+</ul></li>
+<li><code>{object with the source definitions}</code>: 
+
+<ul>
+<li>this is our object that contains the info about the source such as <code>type:vector</code>, <code>tiles:[&quot;link/to/tiles&quot;]</code>, etc.</li>
+</ul></li>
+</ul></li>
+<li><p><code>map.addLayer({object with layer definitions})</code></p>
+
+<ul>
+<li>description: 
+
+<ul>
+<li>this function adds a new layer to the map</li>
+</ul></li>
+<li>parameters:
+
+<ul>
+<li><code>{object with the layer definitions}</code>: 
+
+<ul>
+<li>this is our object that contains the info about our layer&#39;s <code>paint</code>, <code>type</code>, etc. </li>
+</ul></li>
+</ul></li>
+</ul></li>
+</ul>
+</blockquote>
+
+<p>This pattern <code>map.addSource()... map.addLayer()</code> is something that you might encounter as you work more with vector tiles. </p>
+
+<blockquote>
+<ul>
+<li><strong>THIRD:</strong> We define the<code>{object with layer definitions}</code> and assign them to variables within our code. Here we create an <code>{object with layer definitions}</code> for... 
+
+<ul>
+<li>hubwayHaloTripStyle: for creating a halo like effect</li>
+<li>hubwayTripStyle: the main paths where the trips occured</li>
+</ul></li>
+</ul>
+
+<p>...then stick each into an <code>map.addLayer()</code> functions to make those styles appear. Note: each of those styles has a different <code>id</code> 😉</p>
+</blockquote>
+
+<p><img src="assets/images/tilehut-basemap-with-trips.png" alt=""></p>
+
+<p><br></p>
+
+<h4 id="toc_27">layer style check</h4>
+
+<p>Before we continue, let&#39;s just have a look at the layer definition for the <code>hubway-routed-halo</code> layer. </p>
+
+<div><pre><code class="language-none">{
+    &quot;id&quot;: &quot;hubway-routed-halo&quot;,
+    &quot;source&quot;: &quot;tilehut-hubway-routes&quot;,
+    &quot;source-layer&quot;: &quot;hubwayRouted&quot;,
+    &quot;paint&quot;: {
+        &quot;line-color&quot;: &quot;#15a29a&quot;,
+        &quot;line-opacity&quot;: 1,
+        &quot;line-blur&quot;: 2,
+        &quot;line-width&quot;: {
+            &quot;property&quot;: &quot;count&quot;,
+            &quot;base&quot;: 1,
+            &quot;stops&quot;: [
+                [
+                    0,
+                    1
+                ],
+                [
+                    200,
+                    10
+                ]
+            ]
+        }
+    },
+    &quot;type&quot;: &quot;line&quot;,
+    &quot;line-cap&quot;: &quot;round&quot;,
+    &quot;line-join&quot;: &quot;round&quot;
+};</code></pre></div>
+
+<p>Here we can see some new changes to our style:</p>
+
+<blockquote>
+<ul>
+<li>&quot;source&quot;: 
+
+<ul>
+<li>notice it now just references the name of the source id we defined earlier</li>
+</ul></li>
+<li>&quot;line-blur&quot;:
+
+<ul>
+<li>we add some nice line-blur to get a halo like feeling</li>
+</ul></li>
+<li>&quot;line-width:{}&quot;:
+
+<ul>
+<li>&quot;property&quot;: &quot;count&quot;,
+
+<ul>
+<li>notice we&#39;ve added a &quot;property:count&quot;. This says, &quot;give me the count property from our data&quot;, and then style the data based on these data.</li>
+</ul></li>
+<li>&quot;base&quot;:
+
+<ul>
+<li>base says, how the interpolation should be done between </li>
+</ul></li>
+<li>&quot;stops&quot;:
+
+<ul>
+<li>this is a list of lists that defines, &quot;for the given <code>&quot;property&quot;:&quot;count&quot;</code>, give me [the value of count, the line-width]&quot;</li>
+</ul></li>
+</ul></li>
+<li>&quot;line-cap&quot; &amp; &quot;line-join&quot;: you can take a look at the different possibilities <a href="https://www.mapbox.com/mapbox-gl-js/style-spec/#layers-line">here</a>.</li>
+</ul>
+</blockquote>
+
+<p><br></p>
+
+<h3 id="toc_28">Examples/03-trips-and-stations</h3>
+
+<p>Now that we have our bike trips styled and looking all nice and shiny, the next step is to add our <code>bike stations</code> data to the map. </p>
+
+<p>The only things we haven&#39;t yet seen here are:</p>
+
+<blockquote>
+<ul>
+<li><strong>FIRST</strong>: We use jquery&#39;s <code>$.getJSON()</code> function to read in our geojson station data. (note: I&#39;ve added the reference to the jquery library)</li>
+</ul>
+</blockquote>
+
+<div><pre><code class="language-none">$.getJSON(&quot;hubway_Stations_201606.geojson&quot;, function(myStations) {
+    // all of our code now goes in here ...
+    // all of our code now goes in here ...
+    // all of our code now goes in here ...
+});</code></pre></div>
+
+<p>Note: we put all of our code inside getJSON callback to make sure our data is loaded before we do anything.</p>
+
+<blockquote>
+<ul>
+<li><strong>SECOND</strong>: We add a new layer source to our map. :
+
+<ul>
+<li>We set the new source to <code>&quot;type&quot;:&quot;geojson&quot;</code> since our data is a geojson file and ==&gt; </li>
+<li>then we take the data that we read in from the <code>$.getJSON()</code> request called <code>myStations</code> and ==&gt; </li>
+<li>set that to the <code>&quot;data&quot;: myStations</code>. This allows us to now style our stations as we&#39;ve done with our trip layer style.</li>
+</ul></li>
+</ul>
+</blockquote>
+
+<div><pre><code class="language-none">map.addSource(&quot;station-geojson&quot;, {
+    &quot;type&quot;: &quot;geojson&quot;,
+    &quot;data&quot;: myStations,
+});</code></pre></div>
+
+<blockquote>
+<ul>
+<li><p><strong>THIRD</strong>: we add 2 new layer style definitions with <code>&quot;type&quot;: &quot;circle&quot;</code> and <code>&quot;type&quot;: &quot;symbol&quot;</code>. You can see the each type has it&#39;s own style properties which are shown in the documentation <a href="">here</a> and <a href="">here</a>. </p></li>
+<li><p><strong>LAST</strong>: we add the layers in the order that we want them to appear, from bottom to top:</p></li>
+</ul>
+</blockquote>
+
+<div><pre><code class="language-none">// add our trip halo style
+map.addLayer(hubwayHaloTripStyle);
+// add our trip layer style
+map.addLayer(hubwayTripStyle);
+// add station layer style
+map.addLayer(hubwayStationStyle);
+// add the labels style
+map.addLayer(hubwayLabelStyle);</code></pre></div>
+
+<p><center> 🎉And voila! We have a trip counts map 🎉 </center></p>
+
+<p><img src="assets/images/tilehut-trips-and-stations.png" alt=""></p>
+
+<p><br>
+<br></p>
+
+<hr>
+
+<p><br>
+<br></p>
+
+<!-- ********** PART 5 ********** -->
+
+<h2 id="toc_29">Part 5: Deploy Tilehut and show the world your maps!</h2>
+
+<p>Now we&#39;re ready to get our tiles online. In this section we will (assuming the wifi is good enough):</p>
+
+<blockquote>
+<ol>
+<li>turn our project into a git repository.</li>
+<li>setup <strike>Openshift</strike> Heroku</li>
+<li>change the links within our locally developed project</li>
+<li>make some style changes (optional)</li>
+<li>share our project out in the world using github pages</li>
+</ol>
+</blockquote>
+
+<p><br></p>
+
+<h3 id="toc_30">Get your git on</h3>
+
+<p>Before we can deploy to Heroku, we need to turn our Tilehut.js (tilehut-heroku branch) into a <code>git repository</code>. To turn our current Tilehut.js directory into a <code>git</code> repository, follow the steps below:</p>
+
+<blockquote>
+<p>We&#39;re first going to initialize the repository with:</p>
+</blockquote>
+
+<div><pre><code class="language-none">git init</code></pre></div>
+
+<blockquote>
+<p>next we will add all the files we want to be tracked by git:</p>
+</blockquote>
+
+<div><pre><code class="language-none">git add .</code></pre></div>
+
+<blockquote>
+<p>last, we commit all of our files, in our initial commit:</p>
+</blockquote>
+
+<div><pre><code class="language-none">git commit -m &quot;initial commit&quot;</code></pre></div>
+
+<!-- https://devcenter.heroku.com/articles/git -->
+
+<p><br></p>
+
+<h3 id="toc_31">Setup <strike>Openshift</strike>Heroku &amp; deploy</h3>
+
+<!-- 
+> SO the setup guide to Openshift provided in Tilehut is pretty excellent, so let's follow along [here](https://github.com/b-g/tilehut/tree/master/tutorial#option-2-via-openshift) 
+-->
+
+<p><em>&quot;Heroku is a cloud platform as a service (PaaS) supporting several programming languages that is used as a web application deployment model&quot;.</em> I just want to emphasize that this is a temporary solution - stay tuned for updates!</p>
+
+<blockquote>
+<p>First and foremost, you will need an account with <a href="https://dashboard.heroku.com/">Heroku</a> - Heroku offers a free account (~5 projects, and ~500mb of storage). <a href="https://dashboard.heroku.com/">Please make an account</a> and go through the sign up procedures. </p>
+</blockquote>
+
+<p><img src="assets/images/heroku-signup.png" alt=""></p>
+
+<blockquote>
+<p>Next, you will need to download the command-line tools. These can be found here <a href="https://devcenter.heroku.com/articles/heroku-cli#download-and-install">Download Heroku&#39;s CLI Tool</a></p>
+</blockquote>
+
+<p><img src="assets/images/heroku-cli-download.png" alt=""></p>
+
+<p>For your convenience, I&#39;ve included the links here:</p>
+
+<blockquote>
+<ul>
+<li>MacOSX: <a href="https://cli-assets.heroku.com/branches/stable/heroku-osx.pkg">Heroku CLI OSX tools</a></li>
+<li>Windows: <a href="https://cli-assets.heroku.com/branches/v6/heroku-windows-386.exe">32-bit Heroku CLI Windows tools</a> OR  <a href="https://cli-assets.heroku.com/branches/v6/heroku-windows-amd64.exe">64-bit Heroku CLI Windows tools</a></li>
+<li>Debian/Ubuntu: <code>wget -qO- https://cli-assets.heroku.com/install-ubuntu.sh | sh</code></li>
+</ul>
+</blockquote>
+
+<p>Once the tools are installed, please login using the commandline:</p>
+
+<div><pre><code class="language-none"># you will be asked for your email and password
+heroku login</code></pre></div>
+
+<p>Now we will follow the instructions on deploying a git repository to Heroku starting from <a href="https://devcenter.heroku.com/articles/git#creating-a-heroku-remote">Creating a Heroku Remote</a>.</p>
+
+<blockquote>
+<p>First, we will create an app which I will call <code>hubway-tiles</code> (you&#39;ll have to come up with another name since Heroku won&#39;t accept duplicates... get creative!):</p>
+</blockquote>
+
+<div><pre><code class="language-none">cd &lt;tilehut-tilehut-heroku folder&gt;
+# heroku create &lt;name of your app&gt;
+heroku create hubway-tiles
+
+# the result will look something like the below
+# Creating ⬢ hubway-tiles... done
+# https://hubway-tiles.herokuapp.com/ | https://git.heroku.com/hubway-tiles.git</code></pre></div>
+
+<blockquote>
+<p>Next, we should check that our remote git is linked to our heroku app:</p>
+</blockquote>
+
+<div><pre><code class="language-none">git remote -v
+
+# the result will look like the below
+# heroku    https://git.heroku.com/hubway-tiles.git (fetch)
+# heroku    https://git.heroku.com/hubway-tiles.git (push)</code></pre></div>
+
+<blockquote>
+<p>We can now push our git project to heroku:</p>
+</blockquote>
+
+<div><pre><code class="language-none">git push heroku master</code></pre></div>
+
+<blockquote>
+<p>You&#39;re going to see a bunch of terminal output, but once it is over, let&#39;s check to see what&#39;s going on over in Heroku land:</p>
+</blockquote>
+
+<div><pre><code class="language-none"># this will print out the logs from the heroku server
+heroku logs
+
+# the last output should be something like:
+# Tilehut on http://...</code></pre></div>
+
+<blockquote>
+<p>Now if I you go to: <a href="https://hubway-tiles.herokuapp.com/">https://hubway-tiles.herokuapp.com/</a> I will see 🙂. Remember, your link will be different from mine.:</p>
+</blockquote>
+
+<p><img src="assets/images/heroku-deployed-smiley.png" alt=""></p>
+
+<p>You can check to see if the <code>meta.json</code> is returning any results (your url will look different from mine!):</p>
+
+<p><a href="https://hubway-tiles.herokuapp.com/hubway-routed/meta.json">https://hubway-tiles.herokuapp.com/hubway-routed/meta.json</a></p>
+
+<p>If that works, we should have our tiles available at the address, something like:</p>
+
+<blockquote>
+<p>https://hubway-tiles.herokuapp.com/hubway-routed/hubway-routed/{z}/{x}/{y}.pbf</p>
+</blockquote>
+
+<p><br></p>
+
+<h3 id="toc_32">Change links within local projects</h3>
+
+<p>Now that our data is being served from our deployed Tilehut server, all we need to do is replace the local tile URL with the  our remotely served tiles URL. Give that a try!</p>
+
+<p>If you need a hint. Our URL should change from:</p>
+
+<div><pre><code class="language-none">map.addSource(&#39;tilehut-hubway-routes&#39;, {
+  &quot;type&quot;: &quot;vector&quot;,
+  &quot;tiles&quot;: [
+   &quot;http://localhost:8000/hubway-routed/{z}/{x}/{y}.pbf&quot;
+  ]
+});</code></pre></div>
+
+<p>to: </p>
+
+<div><pre><code class="language-none">map.addSource(&#39;tilehut-hubway-routes&#39;, {
+  &quot;type&quot;: &quot;vector&quot;,
+  &quot;tiles&quot;: [
+   &quot;https://hubway-tiles.herokuapp.com/hubway-routed/{z}/{x}/{y}.pbf&quot;
+  ]
+});</code></pre></div>
+
+<p><br></p>
+
+<h3 id="toc_33">Add style changes</h3>
+
+<p>This whole time we&#39;ve been working off the styles I&#39;ve defined for the data, but there are a number of other styles that can be explored. Some suggestions are:</p>
+
+<blockquote>
+<ul>
+<li>try changing the colors of the lines and the stations</li>
+<li>Adjust the representation of the <code>line-width</code> properties of the trips - could they be wider for more emphasis?</li>
+<li>change the <code>line-cap</code> and <code>line-join</code> properties. what happens?</li>
+<li>change the stations label style - make them larger or change the font.</li>
+<li>add popups to our data using the example <a href="https://www.mapbox.com/mapbox-gl-js/example/popup-on-click/">here</a>. </li>
+</ul>
+</blockquote>
+
+<p><img src="assets/images/vector-tile-popups.png" alt="vector tile popups"></p>
+
+<p><br></p>
+
+<h3 id="toc_34">Deploy using Github pages</h3>
+
+<blockquote>
+<p>And now to close the circle, we can host our project on github pages so we can show our map to the world! </p>
+</blockquote>
+
+<p><img src="assets/images/ghpages-project-folder-image.png" alt=""></p>
+
+<blockquote>
+<p>To make a github pages website, here&#39;s a pretty <a href="http://docs.pinegrow.com/host-html-website-github-pages-free/">well documented and beginner friendly example here</a>. </p>
+</blockquote>
+
+<p><br>
+<br></p>
+
+<hr>
+
+<p><br>
+<br></p>
+
+<!-- ********** CONCLUDING REMARKS AND WORKING TIME ********** -->
+
+<h2 id="toc_35">Concluding remarks / Working time / Debugging</h2>
+
+<p>🌈🦄🌈🦄🌈🦄🌈🦄🌈🦄🌈🦄🌈🦄🌈🦄🌈🦄🌈🦄🌈🦄🌈🦄🌈🦄🌈🦄</p>
+
+<p><br></p>
+
+<h3 id="toc_36">Next steps</h3>
+
+<p>My recommendation is to take your own data and go through each step, from converting data, tweaking parameters in Tippecanoe, styling the vector tiles, and pushing your tiles to your remote server. Practice, practice, practice! </p>
+
+<p>If you don&#39;t have your own data, we haven&#39;t talked about styling our <code>total_duration</code> yet, but we now have all the components we need to do so. During our open working session, you&#39;re welcome to come up with a style for the <code>total_duration</code> or work on your own data. </p>
+
+<p>We covered a lot and there&#39;s more yet to explore. How about making a <a href="https://www.mapbox.com/mapbox-gl-js/example/toggle-layers/">little map app that displays different layers on button clicks</a>? </p>
+
+<p>The next hour or so will be dedicated to collaborative working time, debugging, and lots of trial and error. Let&#39;s take this time to make all the things! </p>
+
+<p><center><img src="http://s.quickmeme.com/img/e7/e7ec8aa0f8bbe5d1af19ccf3c819967f649b43a974e18bfbe10bc412f3da9090.jpg" alt="make all the things"> </center></p>
+
+<p>🌈🦄🌈🦄🌈🦄🌈🦄🌈🦄🌈🦄🌈🦄🌈🦄🌈🦄🌈🦄🌈🦄🌈🦄🌈🦄🌈🦄</p>
+
+<p><br>
+<br></p>
+
+<hr>
+
+<p><br>
+<br></p>
+
+<h2 id="toc_37">Shareouts + Closing</h2>
+
+<p>Anyone want to share what they&#39;ve made?</p>
+
+<p><br>
+<br></p>
+
+<hr>
+
+<p><br>
+<br></p>
+
+<h2 id="toc_38">Handy Reference links</h2>
+
+<ul>
+<li><a href="https://www.youtube.com/watch?v=XoDh0gEnBQo&amp;feature=youtu.be">Introduction to styling data with Maputnik</a></li>
+<li>handy way to reduce coordinates: <code>ogr2ogr -f GeoJSON -dsco &quot;COORDINATE_PRECISION=6&quot; boston-flights-small.geojson boston-flights.geojson -progress</code></li>
+<li>handling lots of points with tippecanoe: https://blog.mapbox.com/mapping-extremely-dense-point-data-with-vector-tiles-4052eb409e78</li>
+<li>Explanations for mapboxgl terms: http://schwanksta.com/blog/vector-tiles-introduction-pt1</li>
+<li>alternative tileservers, Klokantech&#39;s tileserver-gl: https://github.com/klokantech/tileserver-gl</li>
+<li>adding raster tiles on top of vector tiles: https://bl.ocks.org/danswick/c19fec2e92e00967458d</li>
+<li>use the &quot;tiles&quot; array to specifify your 3rd party tiles: https://github.com/mapbox/mapbox-gl-js/issues/866</li>
+<li>tilehut-docker: https://hub.docker.com/r/joeyklee/tilehut-docker/tags/\</li>
+<li><a href="joeyklee.github.io/geosandbox">joeyklee.github.io/geosandbox</a>: a handy little interactive reference for working with the web geo libraries.</li>
+</ul>
+
+
+
+<script type="text/javascript">
+var _self="undefined"!=typeof window?window:"undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?self:{},Prism=function(){var e=/\blang(?:uage)?-(\w+)\b/i,t=0,n=_self.Prism={util:{encode:function(e){return e instanceof a?new a(e.type,n.util.encode(e.content),e.alias):"Array"===n.util.type(e)?e.map(n.util.encode):e.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/\u00a0/g," ")},type:function(e){return Object.prototype.toString.call(e).match(/\[object (\w+)\]/)[1]},objId:function(e){return e.__id||Object.defineProperty(e,"__id",{value:++t}),e.__id},clone:function(e){var t=n.util.type(e);switch(t){case"Object":var a={};for(var r in e)e.hasOwnProperty(r)&&(a[r]=n.util.clone(e[r]));return a;case"Array":return e.map&&e.map(function(e){return n.util.clone(e)})}return e}},languages:{extend:function(e,t){var a=n.util.clone(n.languages[e]);for(var r in t)a[r]=t[r];return a},insertBefore:function(e,t,a,r){r=r||n.languages;var l=r[e];if(2==arguments.length){a=arguments[1];for(var i in a)a.hasOwnProperty(i)&&(l[i]=a[i]);return l}var o={};for(var s in l)if(l.hasOwnProperty(s)){if(s==t)for(var i in a)a.hasOwnProperty(i)&&(o[i]=a[i]);o[s]=l[s]}return n.languages.DFS(n.languages,function(t,n){n===r[e]&&t!=e&&(this[t]=o)}),r[e]=o},DFS:function(e,t,a,r){r=r||{};for(var l in e)e.hasOwnProperty(l)&&(t.call(e,l,e[l],a||l),"Object"!==n.util.type(e[l])||r[n.util.objId(e[l])]?"Array"!==n.util.type(e[l])||r[n.util.objId(e[l])]||(r[n.util.objId(e[l])]=!0,n.languages.DFS(e[l],t,l,r)):(r[n.util.objId(e[l])]=!0,n.languages.DFS(e[l],t,null,r)))}},plugins:{},highlightAll:function(e,t){var a={callback:t,selector:'code[class*="language-"], [class*="language-"] code, code[class*="lang-"], [class*="lang-"] code'};n.hooks.run("before-highlightall",a);for(var r,l=a.elements||document.querySelectorAll(a.selector),i=0;r=l[i++];)n.highlightElement(r,e===!0,a.callback)},highlightElement:function(t,a,r){for(var l,i,o=t;o&&!e.test(o.className);)o=o.parentNode;o&&(l=(o.className.match(e)||[,""])[1],i=n.languages[l]),t.className=t.className.replace(e,"").replace(/\s+/g," ")+" language-"+l,o=t.parentNode,/pre/i.test(o.nodeName)&&(o.className=o.className.replace(e,"").replace(/\s+/g," ")+" language-"+l);var s=t.textContent,u={element:t,language:l,grammar:i,code:s};if(!s||!i)return n.hooks.run("complete",u),void 0;if(n.hooks.run("before-highlight",u),a&&_self.Worker){var c=new Worker(n.filename);c.onmessage=function(e){u.highlightedCode=e.data,n.hooks.run("before-insert",u),u.element.innerHTML=u.highlightedCode,r&&r.call(u.element),n.hooks.run("after-highlight",u),n.hooks.run("complete",u)},c.postMessage(JSON.stringify({language:u.language,code:u.code,immediateClose:!0}))}else u.highlightedCode=n.highlight(u.code,u.grammar,u.language),n.hooks.run("before-insert",u),u.element.innerHTML=u.highlightedCode,r&&r.call(t),n.hooks.run("after-highlight",u),n.hooks.run("complete",u)},highlight:function(e,t,r){var l=n.tokenize(e,t);return a.stringify(n.util.encode(l),r)},tokenize:function(e,t){var a=n.Token,r=[e],l=t.rest;if(l){for(var i in l)t[i]=l[i];delete t.rest}e:for(var i in t)if(t.hasOwnProperty(i)&&t[i]){var o=t[i];o="Array"===n.util.type(o)?o:[o];for(var s=0;s<o.length;++s){var u=o[s],c=u.inside,g=!!u.lookbehind,h=!!u.greedy,f=0,d=u.alias;u=u.pattern||u;for(var p=0;p<r.length;p++){var m=r[p];if(r.length>e.length)break e;if(!(m instanceof a)){u.lastIndex=0;var y=u.exec(m),v=1;if(!y&&h&&p!=r.length-1){var b=r[p+1].matchedStr||r[p+1],k=m+b;if(p<r.length-2&&(k+=r[p+2].matchedStr||r[p+2]),u.lastIndex=0,y=u.exec(k),!y)continue;var w=y.index+(g?y[1].length:0);if(w>=m.length)continue;var _=y.index+y[0].length,P=m.length+b.length;if(v=3,P>=_){if(r[p+1].greedy)continue;v=2,k=k.slice(0,P)}m=k}if(y){g&&(f=y[1].length);var w=y.index+f,y=y[0].slice(f),_=w+y.length,S=m.slice(0,w),O=m.slice(_),j=[p,v];S&&j.push(S);var A=new a(i,c?n.tokenize(y,c):y,d,y,h);j.push(A),O&&j.push(O),Array.prototype.splice.apply(r,j)}}}}}return r},hooks:{all:{},add:function(e,t){var a=n.hooks.all;a[e]=a[e]||[],a[e].push(t)},run:function(e,t){var a=n.hooks.all[e];if(a&&a.length)for(var r,l=0;r=a[l++];)r(t)}}},a=n.Token=function(e,t,n,a,r){this.type=e,this.content=t,this.alias=n,this.matchedStr=a||null,this.greedy=!!r};if(a.stringify=function(e,t,r){if("string"==typeof e)return e;if("Array"===n.util.type(e))return e.map(function(n){return a.stringify(n,t,e)}).join("");var l={type:e.type,content:a.stringify(e.content,t,r),tag:"span",classes:["token",e.type],attributes:{},language:t,parent:r};if("comment"==l.type&&(l.attributes.spellcheck="true"),e.alias){var i="Array"===n.util.type(e.alias)?e.alias:[e.alias];Array.prototype.push.apply(l.classes,i)}n.hooks.run("wrap",l);var o="";for(var s in l.attributes)o+=(o?" ":"")+s+'="'+(l.attributes[s]||"")+'"';return"<"+l.tag+' class="'+l.classes.join(" ")+'" '+o+">"+l.content+"</"+l.tag+">"},!_self.document)return _self.addEventListener?(_self.addEventListener("message",function(e){var t=JSON.parse(e.data),a=t.language,r=t.code,l=t.immediateClose;_self.postMessage(n.highlight(r,n.languages[a],a)),l&&_self.close()},!1),_self.Prism):_self.Prism;var r=document.currentScript||[].slice.call(document.getElementsByTagName("script")).pop();return r&&(n.filename=r.src,document.addEventListener&&!r.hasAttribute("data-manual")&&document.addEventListener("DOMContentLoaded",n.highlightAll)),_self.Prism}();"undefined"!=typeof module&&module.exports&&(module.exports=Prism),"undefined"!=typeof global&&(global.Prism=Prism);
+</script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>FOSS4G Workshop - Hello Vector Tiles</title>
+    <meta name="description" content="Onboarding Introduction">
+    <meta name="author" content="Joey Lee">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <link rel="stylesheet" href="assets/style/reveal.css">
+    <link rel="stylesheet" href="assets/style/night.css" id="theme">
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="assets/style/zenburn.css">
+    <!-- Printing and PDF exports -->
+    <script>
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+    document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <div class="reveal">
+        <!-- Any section element inside of this container is displayed as a slide -->
+        <div class="slides">
+            <section data-background="../assets/images/slides-trails.png">
+                <h1><em>Slippy web maps, you complete me:</em> </h1>
+                <p>A friendly step-by-step guide to serving up your own slippy web map tiles with tilehut.js </p>
+                <p>
+                    <small>
+                        <a href="http://www.jk-lee.com" target='_blank'>Joey Lee</a> / 
+                        <a href="https://github.com/joeyklee" target='_blank'>github: @joeyklee</a> /
+                        <a href="https://twitter.com/leejoeyk" target='_blank'>twitter: @leejoeyk</a>
+                    </small>
+                    <br />
+                    <small>Prepared for FOSS4G, Boston, Aug. 2017</small>
+                </p>
+            </section>
+            <section data-background="">
+                <!-- <h2>overview of workshop</h2> -->
+                <img src="../assets/images/slides-part0.png">
+            </section>
+            <section>
+                <section>
+                    <h1> <em>A <br>Quick <br>Detour <br> ↓</h1></em>
+                </section>
+                <section data-background="../assets/images/slides-lab.png">
+                    <!-- hi, I'm joey -->
+                    <h3 class="highlight-bg">@leejoeyk #geography #mediaarts #research</h3>
+                </section>
+                <section data-background="../assets/images/slides-moovellab-1.png">
+                    <!-- <h2>moovel lab plug + hiring</h2> -->
+                    <h3 class="highlight-bg">@moovellab #speculativedesign #dataviz #mobility</h3>
+                </section>
+                <section data-background="">
+                    <!-- <h2>moovel lab plug + hiring</h2> -->
+                    <h3 class="highlight-bg">#speculativedesign #design4discussion</h3>
+                    <img src="../assets/images/slides-speculative-design.jpg">
+                </section>
+                <section data-background="../assets/images/slides-r2r.jpg">
+                    <h3 class="highlight-bg">roadstorome.moovellab.com/</h3>
+                </section>
+                <section data-background="../assets/images/slides-greenskin.jpg">
+                    <h3 class="highlight-bg">greenskin.moovellab.com</h3>
+                </section>
+                <section data-background="../assets/images/slides-moovel-hiring.png">
+                    <h3 class="highlight-bg">#moovellab #hiring #stuttgart</h3>
+                </section>
+            </section>
+            <section>
+                <section data-background="">
+                    <!-- <h2>overview of workshop</h2> -->
+                    <h1><em>Survey <br> insights <br> 📊📝</em></h1>
+                </section>
+                <section data-background="">
+                    <img src="../assets/images/slides-skill-range-1.png">
+                </section>
+                <section data-background="">
+                    <img src="../assets/images/slides-skill-range-2.png">
+                </section>
+                <section data-background="">
+                    <img src="../assets/images/slides-skill-range-3.png">
+                </section>
+            </section>
+            <section>
+                <section>
+                    <img src="../assets/images/slides-part1.png">
+                </section>
+                <section data-background="../assets/images/slides-hubway.jpg"></section>
+                <section data-background="../assets/images/slides-trails.png">
+                    <h2>Hubway Data - January 2017</h2>
+                    <p>CSV Data processed → group-by → routed using <a href="https://github.com/graphhopper/graphhopper" target="_blank">GraphHopper</a> → to geojson:</p>
+                    <pre><code class="hljs" data-trim contenteditable>
++ 'start station id'
++ 'start station name'
++ 'start station latitude'
++ 'start station longitude'
++ 'end station id'
++ 'end station name'
++ 'end station latitude'
++ 'end station longitude'
++ 'count'
++ 'total_duration' (in seconds)
+                    </code></pre>
+                </section>
+                <section data-background="../assets/images/slides-hubway-data-challenge-2.png">
+                    <p class="highlight-bg"><b>http://hubwaydatachallenge.org/submission/28/</b></p>
+                </section>
+                <section data-background="../assets/images/slides-hubway-data-challenge-3.png">
+                    <p class="highlight-bg"><b>http://hubwaydatachallenge.org/submission/41/</b></p>
+                </section>
+                <section data-background="../assets/images/tilehut-trips-and-stations-cropped.png">
+                    <h1><em>Let's <br>Map <br>The<br> Counts!</em></h1>
+                </section>
+            </section>
+            <section>
+                <section data-background="">
+                    <!-- <h2>overview of workshop</h2> -->
+                    <img src="../assets/images/slides-part2.png">
+                </section>
+                <section>
+                    <h2>GeoJSON → MBTiles</h2>
+                    <p>Install Tippecanoe, navigate into the directory and run:</p>
+                    <pre><code class="hljs" data-trim contenteditable>
+tippecanoe -o hubway-routed.mbtiles -maximum-zoom 13 -l hubwayRouted 201701_hubway_routes_all.geojson 
+                    </code></pre>
+                    <ul>
+                        <li><b>tippecanoe</b>: this calls the tippecanoe function</li>
+                        <li><b>-o  hubway-routed.mbtiles</b>: says, "our output file will be called hubway-routed.mbtiles in the data folder"</li>
+                        <li><b>-l hubwayRouted</b>: says, "call our mbtiles hubwayRouted" - we will need this for when we style our tiles; without this, it would call it the name of the file "201701hubwayroutesallgeojson" and that's not so nice.</li>
+                        <li><b>-maximum-zoom 13</b>: tells tippecanoe to only produce tiles to a max of zoom level 13.</li>
+                        <li><b>201701_hubway_routes_all.geojson</b>: is the geojson file of our routed bike trips.</li>
+                    </ul>
+                </section>
+            </section>
+
+            <section>
+                <section data-background="">
+                    <!-- <h2>overview of workshop</h2> -->
+                    <img src="../assets/images/slides-part3.png">
+                </section>
+                <section data-background="https://github.com/b-g/tilehut/blob/master/assets/tilehutjs_title.png?raw=true">
+                    
+                </section>
+                <section data-background="../assets/images/tilehut-simple-world.png">
+                    <h2>Serve up your tiles locally</h2>
+                    <p>Download <a href="https://github.com/b-g/tilehut">Tilehut.js</a> → npm install → npm start</p>
+                    <pre><code class="hljs" data-trim contenteditable>
+# change into the tilehut directory
+cd tilehut
+# this installs all the dependencies
+npm install 
+# this starts the server
+node server.js
+# check in your browser: http://localhost:8000/tiles-world-simple/map/
+                    </code></pre>
+                    <p>Make sure tilehut is running and go to:<a href="http://localhost:8000/tiles-world-simple/map/">http://localhost:8000/tiles-world-simple/map/</a></p>
+                </section>
+
+                <section data-background="../assets/images/tilehut-world-vector.png">
+                    <h2>Getting comfy with the syntax</h2>
+                    <p>Since we're going to be working with vector tiles, let's have a look at the `examples/simplemap_vector` directory. Navigate over and double-click on `index.html`. you should see something like this:</p>
+                </section>
+
+                <section data-background="../assets/images/tilehut-example-index-script-highlight.png">   
+                </section>
+                <section data-background="../assets/images/tilehut-stylejson-annotated.png">   
+                </section>
+                <section>
+                    <h2>Getting the meta information from your tiles: meta.json </h2>
+                    <p>With tilehut.js running → check the meta data of the mbtiles in the <em>data</em> folder by: </p>
+                    <pre><code class="hljs" data-trim contenteditable>
+"http://0.0.0.0:8000/the-name-of-your-mbtile-file/meta.json"
+                    </code></pre>
+                    <p>The response will be a JSON:</p>
+                    <pre><code class="hljs" data-trim contenteditable>
+{
+  "scheme": "tms",
+  "basename": "tiles-world-vector.mbtiles",
+  "id": "tiles-world-vector",
+  "filesize": 1703936,
+  "name": "tiles-world-vector.mbtiles",
+  "description": "tiles-world-vector.mbtiles",
+  "version": "2",
+  //... MORE USEFUL PROPERTIES...
+}
+                    </code></pre>
+                </section>
+
+                <section data-background="../assets/images/tilehut-move-data.png">
+                    <h2>Serve up your bike trips tiles</h2>
+                </section>
+
+            </section>
+
+            <section>
+                <section data-background="">
+                    <!-- <h2>overview of workshop</h2> -->
+                    <img src="../assets/images/slides-part4.png">
+                </section>
+
+                <section data-background="../assets/images/tilehut-example-trips.png">
+                    <h2 class="highlight-bg">examples/01-trips</h2>
+                </section>
+                <section data-background="../assets/images/tilehut-basemap-with-trips.png">
+                    <h2 class="highlight-bg">examples/02-trips-refactored</h2>
+                </section>
+                <section data-background="../assets/images/tilehut-trips-and-stations.png">
+                    <h2 class="highlight-bg">examples/03-trips-and-stations</h2>
+                </section>
+            </section>
+
+            <section>
+                <section data-background="">
+                    <!-- <h2>overview of workshop</h2> -->
+                    <img src="../assets/images/slides-part5.png">
+                </section>
+
+                <section>
+                    <h2>Remix the examples → create your own index.html → turn it into a git repository</h2>
+                    <pre><code class="hljs" data-trim contenteditable>
+# We're first going to initialize the repository with:
+git init
+# next we will add all the files we want to be tracked by git:
+git add .
+# last, we commit all of our files, in our initial commit:
+git commit -m "initial commit"
+                    </code></pre>
+                </section>
+
+                <section>
+                    <h2>Sign up with Heroku → install Heroku commandline tools → deploy Tilehut to Heroku</h2>
+                    <p>you will be asked for your email and password</p>
+                    <pre><code class="hljs" data-trim contenteditable>
+heroku login
+                    </code></pre>
+                    <p>create an app which I will call `hubway-tiles` (you'll have to come up with another name since Heroku won't accept duplicates... get creative!):</p>
+                    <pre><code class="hljs" data-trim contenteditable>
+# heroku create {name of your app}
+heroku create hubway-tiles
+# Send it!
+git push heroku master
+# this will print out the logs from the heroku server
+heroku logs
+                    </code></pre>
+                </section>
+                <section data-background="../assets/images/heroku-deployed-smiley.png">
+                    <h2> → https://hubway-tiles.herokuapp.com/  → 😊</h2>
+                </section>
+
+                <section>
+                    <h2>Now you can change the links to your locally developed project</h2>
+                    <pre><code class="hljs" data-trim contenteditable>
+map.addSource('tilehut-hubway-routes', {
+  "type": "vector",
+  "tiles": [
+   "http://localhost:8000/hubway-routed/{z}/{x}/{y}.pbf"
+  ]
+});
+                    </code></pre>
+                    <p>↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓</p>
+                    <pre><code class="hljs" data-trim contenteditable>
+map.addSource('tilehut-hubway-routes', {
+  "type": "vector",
+  "tiles": [
+   "https://hubway-tiles.herokuapp.com/hubway-routed/{z}/{x}/{y}.pbf"
+  ]
+});
+                    </code></pre>
+                </section>
+                <section data-background="../assets/images/vector-tile-popups.png">
+                    <h2>Remix → Remake → Reapply</h2>
+                </section>  
+
+                <section data-background="">
+                    <h2>Use Github Pages to publish your map & style online! </h2>
+                    <img src="../assets/images/slides-github-pages.png">
+                </section>
+            </section>
+
+            <section data-background="">
+                <img src="../assets/images/slides-part6.png">
+            </section>
+            <section data-background="http://s.quickmeme.com/img/e7/e7ec8aa0f8bbe5d1af19ccf3c819967f649b43a974e18bfbe10bc412f3da9090.jpg">
+            </section>
+            <section data-background="">
+                <p>Go to the workshop:</p>
+                <h2><a href="https://github.com/joeyklee/hello-vector-tiles">github.com/joeyklee/hello-vector-tiles</a></h2>
+            </section>
+            
+        </div>
+    </div>
+    <script src="assets/js/head.min.js"></script>
+    <script src="assets/js/reveal.js"></script>
+    <script>
+    // Full list of configuration options available at:
+    // https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: false,
+
+        transition: 'none', // none/fade/slide/convex/concave/zoom
+
+        // Optional reveal.js plugins
+        dependencies: [{
+            src: 'lib/js/classList.js',
+            condition: function() {
+                return !document.body.classList;
+            }
+        }, {
+            src: 'plugin/markdown/marked.js',
+            condition: function() {
+                return !!document.querySelector('[data-markdown]');
+            }
+        }, {
+            src: 'plugin/markdown/markdown.js',
+            condition: function() {
+                return !!document.querySelector('[data-markdown]');
+            }
+        }, {
+            src: 'plugin/highlight/highlight.js',
+            async: true,
+            condition: function() {
+                return !!document.querySelector('pre code');
+            },
+            callback: function() {
+                hljs.initHighlightingOnLoad();
+            }
+        }, {
+            src: 'plugin/zoom-js/zoom.js',
+            async: true
+        }, {
+            src: 'plugin/notes/notes.js',
+            async: true
+        }]
+    });
+    </script>
+</body>
+
+</html>
