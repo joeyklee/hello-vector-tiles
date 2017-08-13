@@ -494,47 +494,29 @@ pre[class*="language-"] {
 
 <!-- ********** OUTLINE & ITINERARY ********** -->
 
-<h2 id="toc_2">Outline &amp; Itinerary:</h2>
+<!-- ## Outline & Itinerary: -->
 
-<ul>
-<li>Introduction &amp; Overview of the session and outcomes</li>
-<li><strong>Part 1</strong>: Geojournies begin with data
-
-<ul>
-<li>overview of the data</li>
-</ul></li>
-<li><strong>Part 2</strong>: Converting data with Tippecanoe
-
-<ul>
-<li>create some map tiles from a geojson file using Mapbox&#39;s Tippecanoe<br></li>
-</ul></li>
-<li><strong>Part 3</strong>: Our very own Tilehut
-
-<ul>
-<li>setup tilehut.js and serve up the tiles made in Part 2</li>
-</ul></li>
-<li><strong>Part 4</strong>: vector tiles with styles and more
-
-<ul>
-<li>begin working with the Mapbox GL API for styling the vector tiles being served in Part 2</li>
-<li>display your project as a web map</li>
-</ul></li>
-<li><strong>Part 5</strong>: Deploy Tilehut and show the world your maps!
-
-<ul>
-<li>deploy tilehut.js to heroku and show your map to the world</li>
-</ul></li>
-<li><strong>Part 6</strong>: working time + debugging
-
-<ul>
-<li>take time to revisit learned items, debug setup issues, and work on your own data. </li>
-</ul></li>
-<li>Outro, feedback, and shareouts</li>
-</ul>
+<!-- 
+* Introduction & Overview of the session and outcomes
+* **Part 1**: Geojournies begin with data
+    - overview of the data
+* **Part 2**: Converting data with Tippecanoe
+    - create some map tiles from a geojson file using Mapbox's Tippecanoe  
+* **Part 3**: Our very own Tilehut
+    - setup tilehut.js and serve up the tiles made in Part 2
+* **Part 4**: vector tiles with styles and more
+    - begin working with the Mapbox GL API for styling the vector tiles being served in Part 2
+    - display your project as a web map
+* **Part 5**: Deploy Tilehut and show the world your maps!
+    - deploy tilehut.js to heroku and show your map to the world
+* **Part 6**: working time + debugging
+    - take time to revisit learned items, debug setup issues, and work on your own data. 
+* Outro, feedback, and shareouts
+ -->
 
 <!-- ********** COLLABORATION PAD ********** -->
 
-<h2 id="toc_3">Collaboration Pad</h2>
+<h2 id="toc_2">Collaboration Pad</h2>
 
 <p>Please sign in here &amp; feel free to document, ask questions, or make comments on this collaborative etherpad:</p>
 
@@ -550,35 +532,34 @@ pre[class*="language-"] {
 
 <!-- ********** WORKSHOP START ********** -->
 
-<h1 id="toc_4">3...2...1 Let&#39;s go!</h1>
+<h1 id="toc_3">3...2...1 Let&#39;s go!</h1>
 
 <!-- ********** INTRODUCTION ********** -->
 
-<h2 id="toc_5">Introduction</h2>
+<h2 id="toc_4">Introduction</h2>
+
+<p><img src="assets/images/slides-part0.png" alt=""></p>
 
 <ul>
-<li>I&#39;m joey, your workshop host.</li>
+<li>I&#39;m <a href="jk-lee.com">joey</a>, your workshop host.</li>
 <li><p>Say hello to eachother! </p></li>
-<li><p>What we&#39;re going to accomplish today:</p>
+<li><p>What are we going to accomplish today?</p>
 
+<blockquote>
 <ul>
-<li>today we&#39;re going to be looking at <a href="https://www.thehubway.com/datachallenge">Boston&#39;s hubway data</a> from the 2017 Hubway Visualization challenge.</li>
-<li>Hubway is a bike sharing service in the Boston Metro area.</li>
-<li>We are going to visualize two main features from the January 2017 dataset:
-
-<ul>
-<li>the count of trips to-and-from each station</li>
-<li>the total sum time of the trips to-and-from each station</li>
-</ul></li>
-</ul></li>
+<li>we&#39;re going to be visualize data from <a href="https://www.thehubway.com/datachallenge">Boston&#39;s Hubway bike sharing service</a>, namely the counts and the sum time to-and-from each station.</li>
+</ul>
+</blockquote></li>
 <li><p>how are we going to do it?</p>
 
+<blockquote>
 <ul>
 <li>we will use Tippecanoe: a commandline tool to convert our geojson data to vector tiles</li>
 <li>we will serve up our tiles using Tilehut.js</li>
 <li>we will learn to style our data using the mapbox gl API for vector tile specifications</li>
 <li>and finally, we will make a little web visualization that shows our data using a provided html/js/css template.</li>
-</ul></li>
+</ul>
+</blockquote></li>
 </ul>
 
 <p><br>
@@ -591,13 +572,15 @@ pre[class*="language-"] {
 
 <!-- ********** Part 1 ********** -->
 
-<h2 id="toc_6">Part 1: Geojournies begin with data</h2>
+<h2 id="toc_5">Part 1: Geojournies begin with data</h2>
 
-<p><img src="assets/images/hubway-counts-routed.png" alt="image of hubway counts between stops"></p>
+<p><img src="assets/images/slides-part1.png" alt=""></p>
 
 <p><br></p>
 
-<h3 id="toc_7">Introduction to the data</h3>
+<h3 id="toc_6">Introduction to the data</h3>
+
+<p><img src="assets/images/hubway-counts-routed.png" alt="image of hubway counts between stops"></p>
 
 <p>For this workshop, I&#39;ve prepared <a href="https://www.thehubway.com/system-data">1 month of Boston&#39;s Hubway Bike Service data</a> from January 2017.  Why January? one of the coldest months of the year? </p>
 
@@ -636,7 +619,7 @@ pre[class*="language-"] {
 
 <p><br></p>
 
-<h3 id="toc_8">Sketching with 🚴 data</h3>
+<h3 id="toc_7">Sketching with 🚴 data</h3>
 
 <p>I made a few attempts to prepare the data in a way that might help us to communicate the volume of Hubway trips occuring across Boston. Here&#39;s what I tried:</p>
 
@@ -673,11 +656,13 @@ pre[class*="language-"] {
 
 <!-- ********** Part 2 ********** -->
 
-<h2 id="toc_9">Part 2: Converting data with Tippecanoe</h2>
+<h2 id="toc_8">Part 2: Converting data with Tippecanoe</h2>
+
+<p><img src="assets/images/slides-part2.png" alt=""></p>
 
 <p><br></p>
 
-<h3 id="toc_10">What&#39;s a Tippecanoe?</h3>
+<h3 id="toc_9">What&#39;s a Tippecanoe?</h3>
 
 <p>So now we&#39;ve got our bike data bound up in our friendly, but bloated geojson file format. Aren&#39;t you just itching to pack up all up into this wonderfully efficient, web friendly thing we call Vector tiles? </p>
 
@@ -685,13 +670,13 @@ pre[class*="language-"] {
 
 <p><br></p>
 
-<h3 id="toc_11">Installation</h3>
+<h3 id="toc_10">Installation</h3>
 
 <p>If you haven&#39;t installed <a href="https://github.com/mapbox/tippecanoe">Tippecanoe</a>, we can do this together later or you can follow the instructions on the project webpage <a href="https://github.com/mapbox/tippecanoe">here</a>. Easiest is if you use <a href="https://brew.sh/">Homebrew</a> for OSX or <a href="https://www.docker.com/">Docker</a>. </p>
 
 <p><br></p>
 
-<h3 id="toc_12">Converting our routed bike trips</h3>
+<h3 id="toc_11">Converting our routed bike trips</h3>
 
 <p><img src="assets/images/tippecanoe-route-zoomy.gif" alt="Routed trips as vector tiles!"></p>
 
@@ -730,7 +715,7 @@ tippecanoe -o hubway-routed.mbtiles -maximum-zoom 13 -l hubwayRouted 201701_hubw
 
 <p><br></p>
 
-<h3 id="toc_13">A note on handling points</h3>
+<h3 id="toc_12">A note on handling points</h3>
 
 <p>If you do find yourself in the position where you need to convert points, know that Tippecanoe is programmed to optimize for things like redundant features for certain zoom levels and other situations. For example if you want to show some points and make sure they don&#39;t get aggregated into hiding, you might say:</p>
 
@@ -752,7 +737,11 @@ tippecanoe -o hubway-routed.mbtiles -maximum-zoom 13 -l hubwayRouted 201701_hubw
 
 <!-- ********** Part 3 ********** -->
 
-<h2 id="toc_14">Part 3: Our very own Tilehut</h2>
+<h2 id="toc_13">Part 3: Our very own Tilehut</h2>
+
+<p><img src="assets/images/slides-part3.png" alt=""></p>
+
+<h3 id="toc_14">Say hello to Tilehut.js</h3>
 
 <p><img src="https://github.com/b-g/tilehut/blob/master/assets/tilehutjs_title.png?raw=true" alt=""></p>
 
@@ -780,7 +769,7 @@ cd tilehut
 # this installs all the dependencies
 npm install 
 # this starts the server
-node server.js
+npm start
 # check in your browser: http://localhost:8000/tiles-world-simple/map/</code></pre></div>
 
 <p>If you see a world map on your screen, you&#39;ve successfully installed Tilehut.js locally on your machine! We are going to work locally for now but we will setup Tilehut.js on <strike>OpenShift</strike> Heroku so you can show off your data to the world 🌎</p>
@@ -1149,6 +1138,8 @@ Go all around to avoid the NSA (hands on hips, lean all around)
 
 <h2 id="toc_24">Part 4: vector tiles with styles and more</h2>
 
+<p><img src="assets/images/slides-part4.png" alt=""></p>
+
 <p>Here in part 4, we&#39;re going to simultaneously learn about: </p>
 
 <blockquote>
@@ -1403,6 +1394,8 @@ map.addLayer(hubwayLabelStyle);</code></pre></div>
 
 <h2 id="toc_29">Part 5: Deploy Tilehut and show the world your maps!</h2>
 
+<p><img src="assets/images/slides-part5.png" alt=""></p>
+
 <p>Now we&#39;re ready to get our tiles online. In this section we will (assuming the wifi is good enough):</p>
 
 <blockquote>
@@ -1600,13 +1593,17 @@ heroku logs
 
 <!-- ********** CONCLUDING REMARKS AND WORKING TIME ********** -->
 
-<h2 id="toc_35">Concluding remarks / Working time / Debugging</h2>
+<h2 id="toc_35">Part 6: Concluding remarks / Working time / Debugging</h2>
+
+<p><img src="assets/images/slides-part6.png" alt=""></p>
 
 <p>🌈🦄🌈🦄🌈🦄🌈🦄🌈🦄🌈🦄🌈🦄🌈🦄🌈🦄🌈🦄🌈🦄🌈🦄🌈🦄🌈🦄</p>
 
 <p><br></p>
 
 <h3 id="toc_36">Next steps</h3>
+
+<p><center><img src="http://s.quickmeme.com/img/e7/e7ec8aa0f8bbe5d1af19ccf3c819967f649b43a974e18bfbe10bc412f3da9090.jpg" alt="make all the things"> </center></p>
 
 <p>My recommendation is to take your own data and go through each step, from converting data, tweaking parameters in Tippecanoe, styling the vector tiles, and pushing your tiles to your remote server. Practice, practice, practice! </p>
 
@@ -1616,7 +1613,14 @@ heroku logs
 
 <p>The next hour or so will be dedicated to collaborative working time, debugging, and lots of trial and error. Let&#39;s take this time to make all the things! </p>
 
-<p><center><img src="http://s.quickmeme.com/img/e7/e7ec8aa0f8bbe5d1af19ccf3c819967f649b43a974e18bfbe10bc412f3da9090.jpg" alt="make all the things"> </center></p>
+<h3 id="toc_37">Data links:</h3>
+
+<ul>
+<li><a href="https://github.com/node-geojson/openflights-geojson">OpenFlights - Make a beautiful flight map. @tmcw has an easy data downloader for that</a></li>
+<li><a href="https://data.cityofboston.gov/City-Services/311-Service-Requests/awu8-dc52">Boston 311 Service Request Data - what do Bostonians complain about?</a></li>
+<li><a href="http://data.vancouver.ca/datacatalogue/streetTrees.htm">Vancouver Street trees data - with also lots of other meta info, requires some munging</a></li>
+<li><a href="https://www.theguardian.com/news/datablog/interactive/2013/feb/15/meteorite-fall-map">World Meteorite Landings - yes, it&#39;s been done a bunch, but why not make your own map?</a></li>
+</ul>
 
 <p>🌈🦄🌈🦄🌈🦄🌈🦄🌈🦄🌈🦄🌈🦄🌈🦄🌈🦄🌈🦄🌈🦄🌈🦄🌈🦄🌈🦄</p>
 
@@ -1628,7 +1632,7 @@ heroku logs
 <p><br>
 <br></p>
 
-<h2 id="toc_37">Shareouts + Closing</h2>
+<h2 id="toc_38">Shareouts + Closing</h2>
 
 <p>Anyone want to share what they&#39;ve made?</p>
 
@@ -1640,7 +1644,7 @@ heroku logs
 <p><br>
 <br></p>
 
-<h2 id="toc_38">Handy Reference links</h2>
+<h2 id="toc_39">Handy Reference links</h2>
 
 <ul>
 <li><a href="https://www.youtube.com/watch?v=XoDh0gEnBQo&amp;feature=youtu.be">Introduction to styling data with Maputnik</a></li>
