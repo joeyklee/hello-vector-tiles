@@ -441,6 +441,45 @@ You'll notice:
     - `version`: defines a version of the file
     - `sources`: defines the sources of where our tiles are coming from
     - `layers`: defines what layers will be displayed on the map. 
+    - `spite` : defines the spritesheet for using custom images for markers and fill patterns (not shown in our current style.json)
+
+A short aside on sprites: we don't have a `sprite` sheet defined, but if we wanted to add some custom image markers, these would be defined in our `mapboxgl.Map()` `style` property as `sprite: link/to/spritesheet-name`. You can see an [example of a Mapbox spritesheet](https://www.mapbox.com/mapbox-gl-styles/sprites/bright.json) and create your own using software like [texturePacker](https://www.codeandweb.com/texturepacker) or I'm sure there's plug-ins for illustrator or SketchApp. 
+
+![](assets/images/sprite-sheet.png)
+
+Your sprite sheet will consist of a `.png` sheet with your icons and a `.json` file with the names and the pixel location of where your image lives on the image sheet like:
+
+```
+... more sprites defined above
+  },
+  "wetland-24": {
+    "x": 26,
+    "y": 26,
+    "width": 24,
+    "height": 24,
+    "pixelRatio": 1,
+    "sdf": false
+  },
+  "water-24": {
+    "x": 52,
+    "y": 0,
+    "width": 24,
+    "height": 24,
+    "pixelRatio": 1,
+    "sdf": false
+  },
+  "airfield-24": {
+    "x": 52,
+    "y": 26,
+    "width": 24,
+    "height": 24,
+    "pixelRatio": 1,
+    "sdf": false
+  }
+... // more sprites defined below
+```
+
+
 
 Lets break down `sources` and `layers` as these are important for the rest of our work:
 
@@ -503,8 +542,10 @@ Each layer in the list has more or less the following properties. More info can 
 >* **source**: this is the name of the source where your tiles came from
 >* **source-layer**: this is the name `-l` we defined during our Tippecanoe conversion; here it is `countriesgeojson`
 >* **visibility**: this is whether the layer is visible or not, takes `true` or `false`
->* **paint**: this is where you define all the style properties of the layer - it is as they say, where all the magic happens. Depending on the `type` of of the layer (explained next), you will have different options. We will explore these further in a bit.
->* **filter**: data in the tiles can be filtered according to the following structure - [see reference here](https://www.mapbox.com/mapbox-gl-js/style-spec/#types-filter).
+>* **paint** or **layout**: this is where you define all the style properties of the layer - it is as they say, where all the magic happens. Depending on the `type` of of the layer (listed below under "type"), you will have different options. We will explore these further in a bit.
+    - **functions** for **paint** or **layout**:
+        * functions, as Mapbox calls them, allow you to style any property in **paint** or **layout** by the zoom level or property of the dataset. These functions include aspects like colorspace, interpolation method, and so on. You can read more [here](https://www.mapbox.com/mapbox-gl-js/style-spec/#types-function)
+>* **filter**: data in the tiles can be filtered according to the following structure - [see reference here](https://www.mapbox.com/mapbox-gl-js/style-spec/#types-filter). As you might imagine, the Filter parameter is used to filter or subset your data. You can then create different layers for each subset of your data for representation.
 >* **type**: this is the type of the layer. The types that can be defined will depend on the data in the `.mbtiles`. The current types are:
     - **fill**: A filled polygon with an optional stroked border.
     - **line**: A stroked line.
@@ -1177,6 +1218,7 @@ The next hour or so will be dedicated to collaborative working time, debugging, 
 * [Boston 311 Service Request Data - what do Bostonians complain about?](https://data.cityofboston.gov/City-Services/311-Service-Requests/awu8-dc52)
 * [Vancouver Street trees data - with also lots of other meta info, requires some munging](http://data.vancouver.ca/datacatalogue/streetTrees.htm)
 * [World Meteorite Landings - yes, it's been done a bunch, but why not make your own map?](https://www.theguardian.com/news/datablog/interactive/2013/feb/15/meteorite-fall-map)
+* [Earthquakes from the USGS](https://www.mapbox.com/tilemill/docs/crashcourse/styling/)
 
 
 
