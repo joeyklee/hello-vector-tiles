@@ -445,7 +445,7 @@ You'll notice:
 
 A short aside on sprites: we don't have a `sprite` sheet defined, but if we wanted to add some custom image markers, these would be defined in our `mapboxgl.Map()` `style` property as `sprite: link/to/spritesheet-name`. You can see an [example of a Mapbox spritesheet](https://www.mapbox.com/mapbox-gl-styles/sprites/bright.json) and create your own using software like [texturePacker](https://www.codeandweb.com/texturepacker) or I'm sure there's plug-ins for illustrator or SketchApp. 
 
-![](assets/images/sprite-sheet.png)
+![](assets/images/sprite-sheets.png)
 
 Your sprite sheet will consist of a `.png` sheet with your icons and a `.json` file with the names and the pixel location of where your image lives on the image sheet like:
 
