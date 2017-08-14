@@ -476,7 +476,13 @@ pre[class*="language-"] {
 
 <p>The workshop is aimed to be as inclusive as possible and therefore we develop our materials with beginners in mind. However, we acknowledge the existence of handful of technologies that may be unfamiliar to those who are just getting started in web development/programming (e.g. Node.js, javascript, and the command line). That being said, we are happy if participants have a basic level computational literacy and have some exposure to mapping tools such as Tilemill, Mapbox Studio, or Maputnik, and web mapping libraries such as leaflet.js and Mapboxgl.js. </p>
 
-<!-- ********** REQUIREMENTS ********** -->
+<!-- ***
+***
+***
+* REQUIREMENTS ***
+***
+***
+* -->
 
 <h2 id="toc_1">Requirements:</h2>
 
@@ -492,7 +498,13 @@ pre[class*="language-"] {
 <li><a href="https://goo.gl/forms/mtNmOMfWfQOpCKbC2">Pre-survey for FOSS4G2017 to gauge understanding</a> (optional, but appreciated 😊)</li>
 </ol>
 
-<!-- ********** OUTLINE & ITINERARY ********** -->
+<!-- ***
+***
+***
+* OUTLINE & ITINERARY ***
+***
+***
+* -->
 
 <!-- ## Outline & Itinerary: -->
 
@@ -514,13 +526,19 @@ pre[class*="language-"] {
 * Outro, feedback, and shareouts
  -->
 
-<!-- ********** COLLABORATION PAD ********** -->
+<!-- ***
+***
+***
+* COLLABORATION PAD ***
+***
+***
+* -->
 
 <h2 id="toc_2">Collaboration Pad</h2>
 
 <p>Please sign in here &amp; feel free to document, ask questions, or make comments on this collaborative etherpad:</p>
 
-<p><center>👉<a href="https://public.etherpad-mozilla.org/p/foss4g-tilehutjs-workshop">Workshop Etherpad</a>👈 </center></p>
+<p><center> <p>👉<a href="https://public.etherpad-mozilla.org/p/foss4g-tilehutjs-workshop" target="_blank">Workshop Etherpad</a>👈 </p></center></p>
 
 <p><br>
 <br></p>
@@ -530,17 +548,30 @@ pre[class*="language-"] {
 <p><br>
 <br></p>
 
-<!-- ********** WORKSHOP START ********** -->
+<!-- ***
+***
+***
+* WORKSHOP START ***
+***
+***
+* -->
 
 <h1 id="toc_3">3...2...1 Let&#39;s go!</h1>
 
-<!-- ********** INTRODUCTION ********** -->
+<!-- ***
+***
+***
+* INTRODUCTION ***
+***
+***
+* -->
 
 <h2 id="toc_4">Introduction</h2>
 
 <p><img src="assets/images/slides-part0.png" alt=""></p>
 
 <ul>
+<li>A few slides to give you an <a href="/slides/index.html">overview of the workshop</a></li>
 <li>I&#39;m <a href="jk-lee.com">joey</a>, your workshop host.</li>
 <li><p>Say hello to eachother! </p></li>
 <li><p>What are we going to accomplish today?</p>
@@ -570,7 +601,13 @@ pre[class*="language-"] {
 <p><br>
 <br></p>
 
-<!-- ********** Part 1 ********** -->
+<!-- ***
+***
+***
+* Part 1 ***
+***
+***
+* -->
 
 <h2 id="toc_5">Part 1: Geojournies begin with data</h2>
 
@@ -643,8 +680,9 @@ pre[class*="language-"] {
 
 <p>For the purpose of this workshop, we will use this routed dataset to produce our visualization and learn about serving and styling vector tiles along the way.</p>
 
-<p><center>👉 The routed data are in: <a href="data/201701_hubway_routes_all.geojson"><code>data/201701_hubway_routes_all.geojson</code></a> 👈</center>
-<center>👉 The hubway stops are in: <a href="data/hubway_Stations_201606.geojson"><code>data/hubway_Stations_201606.geojson</code></a> 👈</center></p>
+<p><center> <p>👉 The routed data are in: <a href="data/201701_hubway_routes_all.geojson" target="_blank">ata/201701<em>hubway</em>routes_all.geojson</a> 👈 </p></center></p>
+
+<p><center><p>👉 The hubway stops are in: <a href="data/hubway_Stations_201606.geojson" target="_blank">data/hubway<em>Stations</em>201606.geojson</a> 👈 </p></center></p>
 
 <p><br>
 <br></p>
@@ -654,7 +692,13 @@ pre[class*="language-"] {
 <p><br>
 <br></p>
 
-<!-- ********** Part 2 ********** -->
+<!-- ***
+***
+***
+* Part 2 ***
+***
+***
+* -->
 
 <h2 id="toc_8">Part 2: Converting data with Tippecanoe</h2>
 
@@ -735,7 +779,13 @@ tippecanoe -o hubway-routed.mbtiles -maximum-zoom 13 -l hubwayRouted 201701_hubw
 <p><br>
 <br></p>
 
-<!-- ********** Part 3 ********** -->
+<!-- ***
+***
+***
+* Part 3 ***
+***
+***
+* -->
 
 <h2 id="toc_13">Part 3: Our very own Tilehut</h2>
 
@@ -863,11 +913,46 @@ npm start
 <li><code>version</code>: defines a version of the file</li>
 <li><code>sources</code>: defines the sources of where our tiles are coming from</li>
 <li><code>layers</code>: defines what layers will be displayed on the map. </li>
+<li><code>spite</code> : defines the spritesheet for using custom images for markers and fill patterns (not shown in our current style.json)</li>
 </ul></li>
 </ul>
 </blockquote>
 
-<p>Lets break down <code>sources</code> and <code>layers</code> as these are important for the rest of our work:</p>
+<p>A short aside on sprites: we don&#39;t have a <code>sprite</code> sheet defined, but if we wanted to add some custom image markers, these would be defined in our <code>mapboxgl.Map()</code> <code>style</code> property as <code>sprite: link/to/spritesheet-name</code>. You can see an <a href="https://www.mapbox.com/mapbox-gl-styles/sprites/bright.json">example of a Mapbox spritesheet</a> and create your own using software like <a href="https://www.codeandweb.com/texturepacker">texturePacker</a> or I&#39;m sure there&#39;s plug-ins for illustrator or SketchApp. </p>
+
+<p><img src="assets/images/sprite-sheets.png" alt=""></p>
+
+<p>Your sprite sheet will consist of a <code>.png</code> sheet with your icons and a <code>.json</code> file with the names and the pixel location of where your image lives on the image sheet like:</p>
+
+<div><pre><code class="language-none">... more sprites defined above
+  },
+  &quot;wetland-24&quot;: {
+    &quot;x&quot;: 26,
+    &quot;y&quot;: 26,
+    &quot;width&quot;: 24,
+    &quot;height&quot;: 24,
+    &quot;pixelRatio&quot;: 1,
+    &quot;sdf&quot;: false
+  },
+  &quot;water-24&quot;: {
+    &quot;x&quot;: 52,
+    &quot;y&quot;: 0,
+    &quot;width&quot;: 24,
+    &quot;height&quot;: 24,
+    &quot;pixelRatio&quot;: 1,
+    &quot;sdf&quot;: false
+  },
+  &quot;airfield-24&quot;: {
+    &quot;x&quot;: 52,
+    &quot;y&quot;: 26,
+    &quot;width&quot;: 24,
+    &quot;height&quot;: 24,
+    &quot;pixelRatio&quot;: 1,
+    &quot;sdf&quot;: false
+  }
+... // more sprites defined below</code></pre></div>
+
+<p>So now that we&#39;ve got that in the back of our brains, let&#39;s break down <code>sources</code> and <code>layers</code> as these are important for the rest of our work:</p>
 
 <p><br></p>
 
@@ -919,8 +1004,16 @@ npm start
 <li><strong>source</strong>: this is the name of the source where your tiles came from</li>
 <li><strong>source-layer</strong>: this is the name <code>-l</code> we defined during our Tippecanoe conversion; here it is <code>countriesgeojson</code></li>
 <li><strong>visibility</strong>: this is whether the layer is visible or not, takes <code>true</code> or <code>false</code></li>
-<li><strong>paint</strong>: this is where you define all the style properties of the layer - it is as they say, where all the magic happens. Depending on the <code>type</code> of of the layer (explained next), you will have different options. We will explore these further in a bit.</li>
-<li><strong>filter</strong>: data in the tiles can be filtered according to the following structure - <a href="https://www.mapbox.com/mapbox-gl-js/style-spec/#types-filter">see reference here</a>.</li>
+<li><strong>paint</strong> or <strong>layout</strong>: this is where you define all the style properties of the layer - it is as they say, where all the magic happens. Depending on the <code>type</code> of of the layer (listed below under &quot;type&quot;), you will have different options. We will explore these further in a bit.
+
+<ul>
+<li><strong>functions</strong> for <strong>paint</strong> or <strong>layout</strong>:
+
+<ul>
+<li>functions, as Mapbox calls them, allow you to style any property in <strong>paint</strong> or <strong>layout</strong> by the zoom level or property of the dataset. These functions include aspects like colorspace, interpolation method, and so on. You can read more <a href="https://www.mapbox.com/mapbox-gl-js/style-spec/#types-function">here</a></li>
+</ul></li>
+</ul></li>
+<li><strong>filter</strong>: data in the tiles can be filtered according to the following structure - <a href="https://www.mapbox.com/mapbox-gl-js/style-spec/#types-filter">see reference here</a>. As you might imagine, the Filter parameter is used to filter or subset your data. You can then create different layers for each subset of your data for representation.</li>
 <li><strong>type</strong>: this is the type of the layer. The types that can be defined will depend on the data in the <code>.mbtiles</code>. The current types are:
 
 <ul>
@@ -1024,7 +1117,13 @@ or, in this case:
 <p><br>
 <br></p>
 
-<!-- ********** BREAK ********** -->
+<!-- ***
+***
+***
+* BREAK ***
+***
+***
+* -->
 
 <p>🎉❤️⚡️✨🦄🌈🎉❤️⚡️✨🦄🌈🎉❤️⚡️✨🦄🌈🎉❤️⚡️✨🦄🌈🎉❤️⚡️✨🦄🌈</p>
 
@@ -1049,7 +1148,13 @@ Go all around to avoid the NSA (hands on hips, lean all around)
 <p><br>
 <br></p>
 
-<!-- ********** Part 3.5 ********** -->
+<!-- ***
+***
+***
+* Part 3.5 ***
+***
+***
+* -->
 
 <h2 id="toc_22">Part 3.5</h2>
 
@@ -1134,7 +1239,13 @@ Go all around to avoid the NSA (hands on hips, lean all around)
 <p><br>
 <br></p>
 
-<!-- ********** Part 4 ********** -->
+<!-- ***
+***
+***
+* Part 4 ***
+***
+***
+* -->
 
 <h2 id="toc_24">Part 4: vector tiles with styles and more</h2>
 
@@ -1390,7 +1501,13 @@ map.addLayer(hubwayLabelStyle);</code></pre></div>
 <p><br>
 <br></p>
 
-<!-- ********** PART 5 ********** -->
+<!-- ***
+***
+***
+* PART 5 ***
+***
+***
+* -->
 
 <h2 id="toc_29">Part 5: Deploy Tilehut and show the world your maps!</h2>
 
@@ -1591,7 +1708,13 @@ heroku logs
 <p><br>
 <br></p>
 
-<!-- ********** CONCLUDING REMARKS AND WORKING TIME ********** -->
+<!-- ***
+***
+***
+* CONCLUDING REMARKS AND WORKING TIME ***
+***
+***
+* -->
 
 <h2 id="toc_35">Part 6: Concluding remarks / Working time / Debugging</h2>
 
@@ -1620,6 +1743,7 @@ heroku logs
 <li><a href="https://data.cityofboston.gov/City-Services/311-Service-Requests/awu8-dc52">Boston 311 Service Request Data - what do Bostonians complain about?</a></li>
 <li><a href="http://data.vancouver.ca/datacatalogue/streetTrees.htm">Vancouver Street trees data - with also lots of other meta info, requires some munging</a></li>
 <li><a href="https://www.theguardian.com/news/datablog/interactive/2013/feb/15/meteorite-fall-map">World Meteorite Landings - yes, it&#39;s been done a bunch, but why not make your own map?</a></li>
+<li><a href="https://www.mapbox.com/tilemill/docs/crashcourse/styling/">Earthquakes from the USGS</a></li>
 </ul>
 
 <p>🌈🦄🌈🦄🌈🦄🌈🦄🌈🦄🌈🦄🌈🦄🌈🦄🌈🦄🌈🦄🌈🦄🌈🦄🌈🦄🌈🦄</p>

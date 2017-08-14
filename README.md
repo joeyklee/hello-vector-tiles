@@ -481,7 +481,7 @@ Your sprite sheet will consist of a `.png` sheet with your icons and a `.json` f
 
 
 
-Lets break down `sources` and `layers` as these are important for the rest of our work:
+So now that we've got that in the back of our brains, let's break down `sources` and `layers` as these are important for the rest of our work:
 
 <br>
 
